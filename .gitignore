@@ -1,0 +1,5 @@
+node_modules/
+fr_*/
+_*.html
+s_*.png
+sh_*.png
