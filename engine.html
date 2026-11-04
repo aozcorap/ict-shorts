@@ -75,15 +75,16 @@ function candle(i,t){
   return `<line x1="${x}" x2="${x}" y1="${Y(hi)}" y2="${Y(lo)}" stroke="${INK}" stroke-width="3"/>
   <rect x="${x-bw/2}" y="${top}" width="${bw}" height="${hh}" fill="${up?'#fff':INK}" stroke="${INK}" stroke-width="3"/>`;
 }
-const F='font-family="PM" font-weight="600"';
+const F='font-family="PM" font-weight="600" stroke="#fff" stroke-width="7" paint-order="stroke" stroke-linejoin="round"';
 const xe=i=>i==='end'?W-PR:X(i);
-function el(e,t){
+function el(e,t,part){
   const k=ease((t-e.at)/(e.dur||.5)); if(k<=0) return '';
   const vis=e.until?Math.min(1,cl((e.until-t)/.2)):1; if(vis<=0) return ''; const o=k*vis;
   const c=COL[e.color||'blue'];
   if(e.type==='zone'){const x0=X(e.i0)-bw/2-6,x1=x0+((e.i1==='end'?W-PR:X(e.i1)+bw/2+6)-x0)*k,ya=Y(e.p1),yb=Y(e.p0);
-    return `<rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="${c}" opacity="${.16*vis}"/><rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="none" stroke="${c}" stroke-width="3" stroke-dasharray="14 8" opacity="${vis}"/>`+
-      (e.label?`<text ${F} x="${Math.max(40,x0)}" y="${e.labelBelow?yb+34:ya-14}" font-size="26" fill="${c}" opacity="${o}">${e.label}</text>`:'');}
+    const shape=`<rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="${c}" opacity="${.16*vis}"/><rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="none" stroke="${c}" stroke-width="3" stroke-dasharray="14 8" opacity="${vis}"/>`;
+    const lab=e.label?`<text ${F} x="${Math.max(40,x0)}" y="${e.labelBelow?yb+34:ya-14}" font-size="26" fill="${c}" opacity="${o}">${e.label}</text>`:'';
+    return part==='label'?lab:shape;}
   if(e.type==='line'){const x0=X(e.i0),x1=x0+(xe(e.i1)-x0)*k;
     return `<line x1="${x0}" x2="${x1}" y1="${Y(e.p)}" y2="${Y(e.p)}" stroke="${c}" stroke-width="3" stroke-dasharray="10 8" opacity="${vis}"/>`+
       (e.label?`<text ${F} x="${Math.max(40,x0)}" y="${Y(e.p)+(e.labelBelow?34:-12)}" font-size="24" fill="${c}" opacity="${o}">${e.label}</text>`:'');}
@@ -93,9 +94,9 @@ function el(e,t){
 }
 function render(t){
   let s='';
-  (SPEC.elements||[]).filter(e=>e.type==='zone').forEach(e=>s+=el(e,t));
+  (SPEC.elements||[]).filter(e=>e.type==='zone').forEach(e=>s+=el(e,t,'shape'));
   for(let i=0;i<N;i++)s+=candle(i,t);
-  (SPEC.elements||[]).filter(e=>e.type!=='zone').forEach(e=>s+=el(e,t));
+  (SPEC.elements||[]).forEach(e=>s+=el(e,t,'label'));
   document.getElementById('chart').innerHTML=s;
   const idx=caps.reduce((m,c,i)=>t>=c.a?i:m,-1);
   let html='';

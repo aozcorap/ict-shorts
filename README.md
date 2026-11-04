@@ -25,6 +25,6 @@ Voraussetzung: Node, Playwright (Chromium), ffmpeg. Schriften: Space Grotesk und
 - Im Fuß jedes Videos: "Lehrbeispiel, keine Anlageberatung".
 
 ## Bekannte Schwächen (Stand erster Push)
-- Einzelne Beschriftungen überlappen Kerzen oder andere Labels: liq05, liq06, liq08, liq12.
+- Einige Beschriftungen liegen noch über Kerzen (lesbar durch weißen Rand): liq01, liq04, liq12.
 - Kein Ton.
 - Folgen 11 und 13 enthalten Faustregeln aus dem Kursmaterial, vor Veröffentlichung prüfen.
