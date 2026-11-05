@@ -36,6 +36,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;color:var(--ink);font-famil
 #outro{position:absolute;top:64px;left:0;right:0;bottom:0;padding:44px 40px;opacity:0;background:var(--ink)}
 #outro small{font:600 30px 'PM',monospace;color:#7FA0FF}
 #outro h2{font-weight:700;font-size:84px;letter-spacing:-.04em;line-height:1.02;margin-top:18px;color:#fff}
+#intro{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:9;background-color:var(--bg);background-image:radial-gradient(#C3CBD8 2px,transparent 2px);background-size:40px 40px;padding:0 80px}
+#intro .tag{display:inline-block;font:600 34px 'PM',monospace;color:#fff;background:var(--blue);padding:8px 20px;border-radius:10px;margin-top:700px}
+#intro h1{font-weight:700;font-size:190px;letter-spacing:-.045em;line-height:1;margin-top:28px}
+#intro p{font:500 44px 'PM',monospace;color:var(--muted);margin-top:24px}
 #steps{position:absolute;left:56px;top:1816px;display:flex;gap:10px;align-items:center;font:600 26px 'PM',monospace;color:var(--ink)}
 #steps i{width:34px;height:34px;border:3px solid var(--ink);border-radius:6px;background:transparent}
 #steps i.on{background:var(--blue);border-color:var(--ink)}
@@ -48,6 +52,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;color:var(--ink);font-famil
   <div id="head"><span class="tag" id="tag"></span><h1 id="h1"></h1><p id="sub"></p></div></div></div>
 <div class="win" id="wb"><div class="bar"><i></i><i></i><i></i><span>erklaerung.log</span></div><div id="log"></div>
  <div id="outro"><small id="osm"></small><h2 id="oh2"></h2></div></div>
+<div id="intro"><span class="tag" id="itag"></span><h1 id="ih1"></h1><p id="isub"></p></div>
 <div id="steps"></div><div id="foot">Lehrbeispiel, keine Anlageberatung</div>
 <script>
 const SPEC=__SPEC__;
@@ -62,6 +67,7 @@ const COL={blue:'#2F5BFF',orange:'#E8590C',green:'#0CA678',ink:INK,muted:'#6A758
 const caps=SPEC.caps.map(c=>({a:c[0],b:c[1],s:c[2].split('*').map((x,i)=>[x,i%2]).filter(x=>x[0])}));
 const DUR=caps[caps.length-1].b+2.7, OUT=caps[caps.length-1].b+.1;
 document.getElementById('ep').textContent=SPEC.ep;document.getElementById('wt').textContent=SPEC.slug.replace(/[0-9]+/,'')+'.chart';document.getElementById('tag').textContent=SPEC.tag;
+document.getElementById('itag').textContent=SPEC.tag;document.getElementById('ih1').textContent=SPEC.title;document.getElementById('isub').textContent=SPEC.sub;
 const h1=document.getElementById('h1');h1.textContent=SPEC.title;h1.style.fontSize=(SPEC.titleSize||104)+'px';
 document.getElementById('sub').textContent=SPEC.sub;
 document.getElementById('osm').textContent='$ next --'+SPEC.next.ep;document.getElementById('oh2').innerHTML=SPEC.next.title;
@@ -93,6 +99,7 @@ function el(e,t,part){
   return '';
 }
 function render(t){
+  const I=SPEC.intro,io=document.getElementById('intro');if(I){const k=1-ease((t-(I.b-.5))/.5);io.style.opacity=k;io.style.display=k<=0?'none':'block';io.querySelector('h1').style.transform=`translateY(${(1-ease(t/.5))*24}px)`;}
   let s='';
   (SPEC.elements||[]).filter(e=>e.type==='zone').forEach(e=>s+=el(e,t,'shape'));
   for(let i=0;i<N;i++)s+=candle(i,t);

@@ -157,32 +157,32 @@
   [
    0,
    11,
-   0.3,
-   0.35
+   3.3,
+   0.3
   ],
   [
    12,
    15,
-   11,
+   8.0,
    0.5
   ],
   [
    16,
    20,
-   15,
-   0.8
+   15.8,
+   0.7
   ],
   [
    21,
    23,
-   20.3,
+   20.2,
    0.7
   ]
  ],
  "elements": [
   {
    "type": "line",
-   "at": 1.5,
+   "at": 7.0,
    "i0": 3,
    "i1": "end",
    "p": 50,
@@ -192,7 +192,7 @@
   },
   {
    "type": "zone",
-   "at": 6.0,
+   "at": 11.5,
    "i0": 3,
    "i1": 18,
    "p0": 46.5,
@@ -204,16 +204,16 @@
   },
   {
    "type": "ring",
-   "at": 17.6,
-   "until": 22,
+   "at": 17.9,
+   "until": 24.0,
    "i": 19,
    "p": 46.5,
    "color": "orange"
   },
   {
    "type": "label",
-   "at": 17.6,
-   "until": 22,
+   "at": 17.9,
+   "until": 24.0,
    "i": 18,
    "p": 43,
    "text": "// stopps ausgelöst",
@@ -223,48 +223,48 @@
  ],
  "caps": [
   [
-   0.6,
-   5.0,
-   "Der Preis dreht links zweimal am gleichen *Tief* um."
+   3.8,
+   7.0,
+   "Wo liegt im Chart eigentlich *Liquidität*?"
   ],
   [
-   5.0,
-   10.0,
-   "Wer dort kauft, setzt den *Stop-Loss* meist knapp darunter."
+   7.0,
+   11.5,
+   "Käufer setzen den *Stop-Loss* unter ein altes Tief."
   ],
   [
-   10.0,
-   14.5,
+   11.5,
+   15.5,
    "Viele Stopps an einer Stelle: das ist *Liquidität*."
   ],
   [
-   14.5,
+   15.5,
    20.0,
-   "Fällt der Preis dorthin, werden die Stopps *ausgelöst*."
+   "Läuft der Preis hinein, werden sie *ausgelöst*."
   ],
   [
    20.0,
-   25.0,
+   24.0,
    "Danach dreht der Kurs *manchmal* kräftig."
   ],
   [
-   25.0,
-   31.0,
-   "Laut ICT zieht *Liquidität* den Preis an. Das ist ein Modell, keine Garantie."
+   24.0,
+   28.0,
+   "Laut ICT zieht *Liquidität* den Preis an."
   ],
   [
-   31.0,
-   36.5,
-   "Nicht jedes Tief wird abgeholt. Prüfe es selbst in deinem Chart."
-  ],
-  [
-   36.5,
-   45.0,
-   "Welche Folge soll als Nächstes kommen? Die Käufer- und Verkäuferseite, oder der Liquidity Raid? Schreib es in die Kommentare."
+   28.0,
+   34.0,
+   "Welches Thema soll als Nächstes kommen? Schreib es in die Kommentare."
   ]
  ],
  "next": {
-  "ep": "du entscheidest",
-  "title": "Buy- & Sell-Side<br>oder<br>Liquidity Raid?"
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ },
+ "intro": {
+  "a": 0.1,
+  "b": 3.0,
+  "voice": "Liquidität. Wo liegen die Stops?"
  }
 }

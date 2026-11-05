@@ -48,7 +48,8 @@ def main():
     for slug in slugs:
         spec = json.loads((ROOT / a.spec_dir / f"{slug}.json").read_text())
         inputs, filters = [], []
-        for n, (t0, t1, text, *_) in enumerate(spec["caps"], 1):
+        clips = ([(spec["intro"]["a"], spec["intro"]["b"], spec["intro"]["voice"])] if "intro" in spec else []) + [tuple(c[:3]) for c in spec["caps"]]
+        for n, (t0, t1, text) in enumerate(clips, 1):
             wav = AUD / f"{slug}_{n}.wav"
             subprocess.run([sys.executable, "-m", "piper", "-m", a.model, "-f", str(wav)],
                            input=clean(text).encode(), check=True, stderr=subprocess.DEVNULL)
@@ -68,7 +69,7 @@ def main():
         if not src.exists():
             print(f"{slug}: {src.name} fehlt, erst render_all.js laufen lassen", file=sys.stderr)
             continue
-        k = len(spec["caps"])
+        k = len(clips)
         graph = ";".join(filters) + ";" + "".join(f"[a{i}]" for i in range(k)) + \
             f"amix=inputs={k}:normalize=0:dropout_transition=0[m]"
         mix = AUD / f"{slug}_mix.wav"
