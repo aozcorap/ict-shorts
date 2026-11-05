@@ -15,8 +15,15 @@ ROOT = Path(__file__).resolve().parent
 DELAY = 0.2
 
 
+# Aussprache nur fuer den Ton (im Bild bleibt der Originaltext). ICT wird englisch gesprochen: "ai si ti".
+PRON = {"ICT": "Ei Si Ti"}
+
+
 def clean(text):
-    return text.replace("*", "")
+    text = text.replace("*", "")
+    for k, v in PRON.items():
+        text = re.sub(rf"\b{k}\b", v, text)
+    return text
 
 
 def wav_len(p):

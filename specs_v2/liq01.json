@@ -254,12 +254,17 @@
   ],
   [
    31.0,
-   37.0,
+   36.5,
    "Nicht jedes Tief wird abgeholt. Prüfe es selbst in deinem Chart."
+  ],
+  [
+   36.5,
+   45.0,
+   "Welche Folge soll als Nächstes kommen? Die Käufer- und Verkäuferseite, oder der Liquidity Raid? Schreib es in die Kommentare."
   ]
  ],
  "next": {
-  "ep": "folge 02",
-  "title": "Buy- & Sell-<br>Side"
+  "ep": "du entscheidest",
+  "title": "Buy- & Sell-Side<br>oder<br>Liquidity Raid?"
  }
 }
