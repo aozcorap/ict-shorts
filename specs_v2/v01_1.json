@@ -1,0 +1,265 @@
+{
+ "slug": "liquiditaet01",
+ "ep": "liquidität_01",
+ "tag": "LIQUIDITÄT 01",
+ "title": "Liquidität",
+ "titleSize": 84,
+ "sub": "wo liegen die stops?",
+ "pmin": 40,
+ "pmax": 74,
+ "candles": [
+  [
+   60,
+   62,
+   63,
+   59
+  ],
+  [
+   62,
+   58,
+   63,
+   57
+  ],
+  [
+   58,
+   54,
+   59,
+   53
+  ],
+  [
+   54,
+   51,
+   55,
+   50
+  ],
+  [
+   51,
+   55,
+   56,
+   50.6
+  ],
+  [
+   55,
+   59,
+   60,
+   54
+  ],
+  [
+   59,
+   62,
+   63,
+   58
+  ],
+  [
+   62,
+   60,
+   63,
+   59
+  ],
+  [
+   60,
+   56,
+   61,
+   55
+  ],
+  [
+   56,
+   52,
+   57,
+   51
+  ],
+  [
+   52,
+   51,
+   53,
+   50.4
+  ],
+  [
+   51,
+   56,
+   57,
+   50.8
+  ],
+  [
+   56,
+   61,
+   62,
+   55
+  ],
+  [
+   61,
+   65,
+   66,
+   60
+  ],
+  [
+   65,
+   68,
+   69,
+   64
+  ],
+  [
+   68,
+   66,
+   70,
+   65
+  ],
+  [
+   66,
+   62,
+   67,
+   61
+  ],
+  [
+   62,
+   57,
+   63,
+   56
+  ],
+  [
+   57,
+   52,
+   58,
+   51
+  ],
+  [
+   52,
+   47,
+   53,
+   46
+  ],
+  [
+   47,
+   45,
+   48,
+   44
+  ],
+  [
+   45,
+   52,
+   53,
+   44.5
+  ],
+  [
+   52,
+   59,
+   60,
+   51
+  ],
+  [
+   59,
+   66,
+   67,
+   58
+  ]
+ ],
+ "reveal": [
+  [
+   0,
+   11,
+   3.3,
+   0.3
+  ],
+  [
+   12,
+   15,
+   8.0,
+   0.5
+  ],
+  [
+   16,
+   20,
+   15.8,
+   0.7
+  ],
+  [
+   21,
+   23,
+   20.2,
+   0.7
+  ]
+ ],
+ "elements": [
+  {
+   "type": "line",
+   "at": 7.0,
+   "i0": 3,
+   "i1": "end",
+   "p": 50,
+   "color": "muted",
+   "label": "// altes tief",
+   "labelBelow": false
+  },
+  {
+   "type": "zone",
+   "at": 11.5,
+   "i0": 3,
+   "i1": 18,
+   "p0": 46.5,
+   "p1": 50,
+   "color": "orange",
+   "label": "STOP-LOSS DER KÄUFER",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 17.9,
+   "until": 24.0,
+   "i": 19,
+   "p": 46.5,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 17.9,
+   "until": 24.0,
+   "i": 18,
+   "p": 43,
+   "text": "// stopps ausgelöst",
+   "color": "orange",
+   "anchor": "end"
+  }
+ ],
+ "caps": [
+  [
+   3.8,
+   7.0,
+   "Wo liegt im Chart eigentlich *Liquidität*?"
+  ],
+  [
+   7.0,
+   11.5,
+   "Käufer setzen den *Stop-Loss* unter ein altes Tief."
+  ],
+  [
+   11.5,
+   15.5,
+   "Viele Stopps an einer Stelle: das ist *Liquidität*."
+  ],
+  [
+   15.5,
+   20.0,
+   "Läuft der Preis hinein, werden sie *ausgelöst*."
+  ],
+  [
+   20.0,
+   24.0,
+   "Danach dreht der Kurs *manchmal* kräftig."
+  ],
+  [
+   24.0,
+   28.0,
+   "Laut ICT zieht *Liquidität* den Preis an."
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 3.0,
+  "voice": "Liquidität. Was ist das, und wo liegt sie?",
+  "title": "Liquidität",
+  "sub": "was ist das und wo liegt sie?",
+  "tag": "LIQUIDITÄT"
+ },
+ "noOutro": true
+}

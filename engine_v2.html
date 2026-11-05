@@ -67,7 +67,7 @@ const COL={blue:'#2F5BFF',orange:'#E8590C',green:'#0CA678',ink:INK,muted:'#6A758
 const caps=SPEC.caps.map(c=>({a:c[0],b:c[1],s:c[2].split('*').map((x,i)=>[x,i%2]).filter(x=>x[0])}));
 const DUR=caps[caps.length-1].b+2.7, OUT=caps[caps.length-1].b+.1;
 document.getElementById('ep').textContent=SPEC.ep;document.getElementById('wt').textContent=SPEC.slug.replace(/[0-9]+/,'')+'.chart';document.getElementById('tag').textContent=SPEC.tag;
-document.getElementById('itag').textContent=SPEC.tag;document.getElementById('ih1').textContent=SPEC.title;document.getElementById('isub').textContent=SPEC.sub;
+{const I=SPEC.intro||{};document.getElementById('itag').textContent=I.tag||SPEC.tag;const ih=document.getElementById('ih1');ih.textContent=I.title||SPEC.title;ih.style.fontSize=((I.title||SPEC.title).length>12?132:190)+'px';document.getElementById('isub').textContent=I.sub||SPEC.sub;}
 const h1=document.getElementById('h1');h1.textContent=SPEC.title;h1.style.fontSize=(SPEC.titleSize||104)+'px';
 document.getElementById('sub').textContent=SPEC.sub;
 document.getElementById('osm').textContent='$ next --'+SPEC.next.ep;document.getElementById('oh2').innerHTML=SPEC.next.title;
@@ -113,10 +113,10 @@ function render(t){
     const blink=cur&&Math.floor(t*2)%2===0&&t<OUT?'<span class="cur">▌</span>':'';
     html+=`<div class="ln ${cur?'':'old'}"><span class="n">${String(i+1).padStart(2,'0')}</span><span class="tx">${tx}${blink}</span></div>`;
   }
-  const lg=document.getElementById('log');lg.innerHTML=html;lg.style.opacity=1-ease((t-(OUT-.2))/.3);
+  const lg=document.getElementById('log');lg.innerHTML=html;lg.style.opacity=SPEC.noOutro?1:1-ease((t-(OUT-.2))/.3);
   sq.forEach((e,i)=>e.className=(idx>=i&&t<OUT)||t>=OUT?'on':'');
   stl.textContent=t<OUT?`schritt ${String(Math.max(1,idx+1)).padStart(2,'0')}/${String(caps.length).padStart(2,'0')}`:'fertig';
-  const o=ease((t-(OUT+.1))/.5),og=document.getElementById('outro');og.style.opacity=o;og.style.transform=`translateY(${(1-o)*30}px)`;
+  const o=SPEC.noOutro?0:ease((t-(OUT+.1))/.5),og=document.getElementById('outro');og.style.opacity=o;og.style.transform=`translateY(${(1-o)*30}px)`;
   document.getElementById('wa').style.opacity=1-.5*o;
 }
 render(0);
