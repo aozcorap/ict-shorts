@@ -50,7 +50,9 @@ def clone_all(a, slugs, AUD):
         return
     jf = AUD / "_clone_jobs.json"
     jf.write_text(json.dumps(jobs, ensure_ascii=False))
-    subprocess.run([a.clone_python, str(ROOT / "clone_tts.py"), "--ref", a.ref, str(jf)], check=True)
+    ex, cfg, tmp = a.clone_style.split(",")
+    subprocess.run([a.clone_python, str(ROOT / "clone_tts.py"), "--ref", a.ref, "--exaggeration", ex,
+                    "--cfg-weight", cfg, "--temperature", tmp, str(jf)], check=True)
     jf.unlink()
 
 
@@ -61,6 +63,7 @@ def main():
     ap.add_argument("--ref")
     ap.add_argument("--clone-python")
     ap.add_argument("--reuse", action="store_true")
+    ap.add_argument("--clone-style", default="0.35,0.3,0.6", help="Klon: exaggeration,cfg_weight,temperature (Standard = Variante B, ruhiger)")
     ap.add_argument("--no-mux", action="store_true")
     ap.add_argument("--spec-dir", default="specs")
     ap.add_argument("--audio-dir", default="audio")

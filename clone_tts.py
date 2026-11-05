@@ -17,6 +17,9 @@ from chatterbox.mtl_tts import ChatterboxMultilingualTTS
 ap = argparse.ArgumentParser()
 ap.add_argument("--ref", required=True)
 ap.add_argument("--seed", type=int, default=1)
+ap.add_argument("--exaggeration", type=float, default=0.5)
+ap.add_argument("--cfg-weight", type=float, default=0.5)
+ap.add_argument("--temperature", type=float, default=0.8)
 ap.add_argument("jobs")
 a = ap.parse_args()
 jobs = json.load(open(a.jobs, encoding="utf8"))
@@ -24,6 +27,7 @@ m = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
 for j in jobs:
     t = time.time()
     random.seed(a.seed); torch.manual_seed(a.seed)
-    w = m.generate(j["text"], language_id="de", audio_prompt_path=a.ref)
+    w = m.generate(j["text"], language_id="de", audio_prompt_path=a.ref,
+                   exaggeration=a.exaggeration, cfg_weight=a.cfg_weight, temperature=a.temperature)
     ta.save(j["out"], w, m.sr, encoding="PCM_S", bits_per_sample=16)
     print(f"ok {j['out']} ({time.time()-t:.0f}s)", flush=True)
