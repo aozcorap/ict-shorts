@@ -1,4 +1,4 @@
-# Automatisches Transkript von original.mp4 (faster-whisper small, Deutsch)
+# Automatisches Transkript von ICT-Short_Orginial1.MP4 (faster-whisper small, Deutsch)
 # Nicht korrigiert, Fehler möglich (z. B. 'Volk rein' vermutlich anderes Wort).
 
 [  0.0-  2.2] Du willst im Trading profitabel werden?
