@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Deutsche Sprachspur fuer alle Folgen (Piper, offline).
+"""Deutsche Sprachspur fuer alle Folgen (offline): Piper-Standardstimme oder eigene Stimme (Klon, Chatterbox).
 
 Pro Untertitelzeile (caps) eine WAV in audio/<folge>_<n>.wav, Start = a + DELAY.
 Danach pro Folge Mix (ffmpeg adelay/amix) und Einbau ins gerenderte Video (aac).
 Aendert nichts an den Specs: Zeilen, die ihr Zeitfenster [a, b] sprengen, werden nur gemeldet.
 
-Aufruf:  python3 tts_all.py --model PFAD/de_DE-thorsten-medium.onnx [--no-mux] [folgen...]
+Aufruf Piper: python3 tts_all.py --model PFAD/de_DE-thorsten-medium.onnx [--no-mux] [folgen...]
+Aufruf Klon:  python3 tts_all.py --engine clone --ref STIMMPROBE.wav --clone-python PFAD/venv/bin/python [--reuse] [folgen...]
+  (Stimmprobe: eigene Aufnahme, sauber, 10-30 s, wav; nicht ins Repo legen. --reuse ueberspringt vorhandene WAVs.)
 Video-Quelle: <folge>.mp4 im Repo-Root (Ausgabe von render_all.js), Ziel: videos/<folge>.mp4
 """
 import argparse, json, re, subprocess, sys, wave
@@ -31,9 +33,34 @@ def wav_len(p):
         return w.getnframes() / w.getframerate()
 
 
+def clips_of(spec):
+    intro = [(spec["intro"]["a"], spec["intro"]["b"], spec["intro"]["voice"])] if "intro" in spec else []
+    return intro + [tuple(c[:3]) for c in spec["caps"]]
+
+
+def clone_all(a, slugs, AUD):
+    jobs = []
+    for slug in slugs:
+        spec = json.loads((ROOT / a.spec_dir / f"{slug}.json").read_text())
+        for n, (_, _, text) in enumerate(clips_of(spec), 1):
+            wav = AUD / f"{slug}_{n}.wav"
+            if not (a.reuse and wav.exists()):
+                jobs.append({"text": clean(text), "out": str(wav)})
+    if not jobs:
+        return
+    jf = AUD / "_clone_jobs.json"
+    jf.write_text(json.dumps(jobs, ensure_ascii=False))
+    subprocess.run([a.clone_python, str(ROOT / "clone_tts.py"), "--ref", a.ref, str(jf)], check=True)
+    jf.unlink()
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", required=True)
+    ap.add_argument("--engine", choices=["piper", "clone"], default="piper")
+    ap.add_argument("--model")
+    ap.add_argument("--ref")
+    ap.add_argument("--clone-python")
+    ap.add_argument("--reuse", action="store_true")
     ap.add_argument("--no-mux", action="store_true")
     ap.add_argument("--spec-dir", default="specs")
     ap.add_argument("--audio-dir", default="audio")
@@ -44,15 +71,22 @@ def main():
     AUD, OUT = ROOT / a.audio_dir, ROOT / a.out_dir
     AUD.mkdir(exist_ok=True)
     OUT.mkdir(exist_ok=True)
+    if a.engine == "piper" and not a.model:
+        ap.error("--model fehlt (Piper)")
+    if a.engine == "clone":
+        if not (a.ref and a.clone_python):
+            ap.error("--ref und --clone-python fehlen (Klon)")
+        clone_all(a, slugs, AUD)
     overruns = []
     for slug in slugs:
         spec = json.loads((ROOT / a.spec_dir / f"{slug}.json").read_text())
         inputs, filters = [], []
-        clips = ([(spec["intro"]["a"], spec["intro"]["b"], spec["intro"]["voice"])] if "intro" in spec else []) + [tuple(c[:3]) for c in spec["caps"]]
+        clips = clips_of(spec)
         for n, (t0, t1, text) in enumerate(clips, 1):
             wav = AUD / f"{slug}_{n}.wav"
-            subprocess.run([sys.executable, "-m", "piper", "-m", a.model, "-f", str(wav)],
-                           input=clean(text).encode(), check=True, stderr=subprocess.DEVNULL)
+            if a.engine == "piper":
+                subprocess.run([sys.executable, "-m", "piper", "-m", a.model, "-f", str(wav)],
+                               input=clean(text).encode(), check=True, stderr=subprocess.DEVNULL)
             d = wav_len(wav)
             start = t0 + DELAY
             over = start + d - t1

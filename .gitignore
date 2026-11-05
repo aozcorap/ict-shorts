@@ -3,3 +3,5 @@ fr_*/
 _*.html
 s_*.png
 sh_*.png
+voice_ref/
+audio*/_clone_jobs.json

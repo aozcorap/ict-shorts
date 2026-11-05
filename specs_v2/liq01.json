@@ -234,11 +234,11 @@
   ],
   [
    11.5,
-   15.5,
+   16.3,
    "Viele Stopps an einer Stelle: das ist *Liquidität*."
   ],
   [
-   15.5,
+   16.3,
    20.0,
    "Läuft der Preis hinein, werden sie *ausgelöst*."
   ],
@@ -249,11 +249,11 @@
   ],
   [
    24.0,
-   28.0,
+   28.8,
    "Laut ICT zieht *Liquidität* den Preis an."
   ],
   [
-   28.0,
+   28.8,
    34.0,
    "Welches Thema soll als Nächstes kommen? Schreib es in die Kommentare."
   ]
@@ -264,7 +264,7 @@
  },
  "intro": {
   "a": 0.1,
-  "b": 3.0,
+  "b": 3.3,
   "voice": "Liquidität. Wo liegen die Stops?"
  }
 }
