@@ -20,7 +20,7 @@ Voraussetzung: Node, Playwright (Chromium), ffmpeg. Schriften: Space Grotesk und
 `candles` [open, close, high, low], `reveal` [[von, bis, startzeit, abstand]], `elements` (zone, line, ring, label mit `at`/`until`), `caps` [[von, bis, "Text mit *Schlüsselwort*"]], `next` (Abschlusskarte).
 
 ## Regeln
-- Aussagen aus dem ICT-Modell als "laut ICT" formulieren (Hypothese, kein belegter Fakt).
+- Stand Neuaufbau (v3): kein "laut ICT" mehr im Sprechtext, das ICT/Smart-Money-Konzept ist die Grundlage des Kanals. Vorsichtig formulieren ("manchmal", "oft"), keine Gewinnversprechen.
 - Nur eigene Worte und eigene Charts, kein Kursmaterial 1:1 übernehmen.
 - Im Fuß jedes Videos: "Lehrbeispiel, keine Anlageberatung".
 

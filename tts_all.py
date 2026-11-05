@@ -25,7 +25,7 @@ PRON_PIPER = [
     (r"Equal Highs", "[[ iːkwəl haɪz ]]"), (r"Equal Lows", "[[ iːkwəl loʊz ]]"),
     (r"Equal High", "[[ iːkwəl haɪ ]]"),
     (r"Liquidity Raid", "[[ lɪkwɪdɪti ɹeɪd ]]"), (r"Raid", "[[ ɹeɪd ]]"),
-    (r"Stop Hunt", "[[ stɒp hʌnt ]]"), (r"Stop-Loss", "[[ stɒp lɒs ]]"),
+    (r"Stop Hunt", "[[ stɒp hʌnt ]]"), (r"Stop-Loss-Orders", "[[ stɒp lɒs ɔːdɐz ]]"), (r"Stop-Loss", "[[ stɒp lɒs ]]"),
     (r"Limit-Order", "[[ lɪmɪt ɔːdɐ ]]"), (r"Order Pairing", "[[ ɔːdɐ pɛəɹɪŋ ]]"),
     (r"FOMO", "[[ fɔmoʊ ]]"), (r"Range", "[[ ɹeɪndʒ ]]"), (r"Retest", "[[ ɹiːtɛst ]]"),
     (r"Retail", "[[ ɹiːteɪl ]]"), (r"Short-Händler", "[[ ʃɔːt ]]-Händler"),
@@ -50,7 +50,7 @@ def wav_len(p):
 
 def clips_of(spec):
     intro = [(spec["intro"]["a"], spec["intro"]["b"], spec["intro"]["voice"])] if "intro" in spec else []
-    return intro + [tuple(c[:3]) for c in spec["caps"]]
+    return intro + [(c[0], c[1], c[3]["voice"] if len(c) > 3 and "voice" in c[3] else c[2]) for c in spec["caps"]]
 
 
 def clone_all(a, slugs, AUD):
