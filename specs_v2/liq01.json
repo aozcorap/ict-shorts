@@ -2,6 +2,9 @@
  "slug": "liquiditaet01",
  "ep": "liquidität_01",
  "tag": "LIQUIDITÄT 01",
+ "title": "Liquidität",
+ "titleSize": 84,
+ "sub": "wo liegen die stops?",
  "pmin": 40,
  "pmax": 74,
  "candles": [
@@ -160,25 +163,21 @@
   [
    12,
    15,
-   16.5,
+   11,
    0.5
   ],
   [
    16,
    20,
-   21.5,
+   15,
    0.8
   ],
   [
    21,
    23,
-   27.5,
+   20.3,
    0.7
   ]
- ],
- "countdown": [
-  8.5,
-  11.0
  ],
  "elements": [
   {
@@ -192,30 +191,8 @@
    "labelBelow": false
   },
   {
-   "type": "label",
-   "at": 5.0,
-   "until": 11.2,
-   "i": 6,
-   "p": 66.5,
-   "text": "A",
-   "color": "blue",
-   "size": 64,
-   "anchor": "middle"
-  },
-  {
-   "type": "label",
-   "at": 5.0,
-   "until": 11.2,
-   "i": 6,
-   "p": 46,
-   "text": "B",
-   "color": "blue",
-   "size": 64,
-   "anchor": "middle"
-  },
-  {
    "type": "zone",
-   "at": 12.0,
+   "at": 6.0,
    "i0": 3,
    "i1": 18,
    "p0": 46.5,
@@ -227,16 +204,16 @@
   },
   {
    "type": "ring",
-   "at": 24.0,
-   "until": 28.5,
+   "at": 17.6,
+   "until": 22,
    "i": 19,
    "p": 46.5,
    "color": "orange"
   },
   {
    "type": "label",
-   "at": 24.0,
-   "until": 28.5,
+   "at": 17.6,
+   "until": 22,
    "i": 18,
    "p": 43,
    "text": "// stopps ausgelöst",
@@ -247,94 +224,42 @@
  "caps": [
   [
    0.6,
-   4.6,
-   "Ein altes Tief im Chart. Wo liegen die *Stops* der Käufer?",
-   {
-    "k": "FRAGE",
-    "h": "Wo liegen hier die Stops?",
-    "big": "Wo liegen die Stops?",
-    "col": "ink"
-   }
+   5.0,
+   "Der Preis dreht links zweimal am gleichen *Tief* um."
   ],
   [
-   4.6,
-   11.5,
-   "Über dem Hoch, A, oder unter dem Tief, B? Denk kurz nach.",
-   {
-    "k": "FRAGE",
-    "h": "A oder B?",
-    "big": "A oder B?",
-    "col": "blue"
-   }
+   5.0,
+   10.0,
+   "Wer dort kauft, setzt den *Stop-Loss* meist knapp darunter."
   ],
   [
-   11.5,
-   16.5,
-   "Richtig ist B. Käufer setzen den *Stop-Loss* unter das alte Tief.",
-   {
-    "k": "AUFLÖSUNG",
-    "kc": "green",
-    "h": "Richtig ist B",
-    "big": "Richtig ist B",
-    "col": "green"
-   }
+   10.0,
+   14.5,
+   "Viele Stopps an einer Stelle: das ist *Liquidität*."
   ],
   [
-   16.5,
-   21.5,
-   "Viele Stopps an einer Stelle: das ist *Liquidität*.",
-   {
-    "k": "BEGRIFF",
-    "h": "Was ist Liquidität?",
-    "big": "Viele Stopps an einer Stelle",
-    "col": "ink"
-   }
+   14.5,
+   20.0,
+   "Fällt der Preis dorthin, werden die Stopps *ausgelöst*."
   ],
   [
-   21.5,
-   27.0,
-   "Läuft der Preis hinein, werden sie *ausgelöst*.",
-   {
-    "k": "BEISPIEL",
-    "kc": "orange",
-    "h": "Der Preis läuft hinein",
-    "big": "Stopps werden ausgelöst",
-    "col": "orange"
-   }
+   20.0,
+   25.0,
+   "Danach dreht der Kurs *manchmal* kräftig."
   ],
   [
-   27.0,
-   33.0,
-   "Danach dreht der Kurs *manchmal* kräftig.",
-   {
-    "k": "BEISPIEL",
-    "kc": "orange",
-    "h": "Und dann?",
-    "big": "Danach dreht der Kurs manchmal",
-    "col": "ink"
-   }
+   25.0,
+   31.0,
+   "Laut ICT zieht *Liquidität* den Preis an. Das ist ein Modell, keine Garantie."
   ],
   [
-   33.0,
-   39.5,
-   "Laut ICT zieht *Liquidität* den Preis an. Das ist ein Modell, keine Garantie.",
-   {
-    "k": "LAUT ICT",
-    "h": "Das Modell dahinter",
-    "big": "Laut ICT zieht Liquidität den Preis an",
-    "col": "blue"
-   }
-  ],
-  [
-   39.5,
-   45.0,
-   "Welche Folge soll als Nächstes kommen? Schreib es in die Kommentare.",
-   {
-    "k": "DEIN TURN",
-    "h": "Weiter geht's",
-    "big": "Was kommt als Nächstes?",
-    "col": "blue"
-   }
+   31.0,
+   37.0,
+   "Nicht jedes Tief wird abgeholt. Prüfe es selbst in deinem Chart."
   ]
- ]
+ ],
+ "next": {
+  "ep": "folge 02",
+  "title": "Buy- & Sell-<br>Side"
+ }
 }
