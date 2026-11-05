@@ -17,14 +17,29 @@ ROOT = Path(__file__).resolve().parent
 DELAY = 0.2
 
 
-# Aussprache nur fuer den Ton (im Bild bleibt der Originaltext). ICT wird englisch gesprochen: "ai si ti".
-PRON = {"ICT": "Ei Si Ti"}
+# Aussprache nur fuer den Ton (im Bild bleibt der Originaltext).
+# Piper: englische Begriffe in Lautschrift [[ ... ]] (die Stimme kennt die englischen Laute).
+# Hinweis: direkt vor Satzzeichen KEIN Leerzeichen lassen, sonst verhaspelt sich Piper.
+PRON_PIPER = [
+    (r"Buy-Side", "[[ baɪ saɪd ]]"), (r"Sell-Side", "[[ sɛl saɪd ]]"),
+    (r"Equal Highs", "[[ iːkwəl haɪz ]]"), (r"Equal Lows", "[[ iːkwəl loʊz ]]"),
+    (r"Equal High", "[[ iːkwəl haɪ ]]"),
+    (r"Liquidity Raid", "[[ lɪkwɪdɪti ɹeɪd ]]"), (r"Raid", "[[ ɹeɪd ]]"),
+    (r"Stop Hunt", "[[ stɒp hʌnt ]]"), (r"Stop-Loss", "[[ stɒp lɒs ]]"),
+    (r"Limit-Order", "[[ lɪmɪt ɔːdɐ ]]"), (r"Order Pairing", "[[ ɔːdɐ pɛəɹɪŋ ]]"),
+    (r"FOMO", "[[ fɔmoʊ ]]"), (r"Range", "[[ ɹeɪndʒ ]]"), (r"Retest", "[[ ɹiːtɛst ]]"),
+    (r"Retail", "[[ ɹiːteɪl ]]"), (r"Short-Händler", "[[ ʃɔːt ]]-Händler"),
+    (r"Trader", "[[ tɹeɪdɐ ]]"), (r"ICT", "[[ aɪ siː tiː ]]"),
+    (r"Chart", "Tschart"),
+]
+# Klon (Chatterbox) versteht keine Lautschrift: nur Schreibweisen.
+PRON_CLONE = [(r"ICT", "Ei Si Ti")]
 
 
-def clean(text):
+def clean(text, engine="piper"):
     text = text.replace("*", "")
-    for k, v in PRON.items():
-        text = re.sub(rf"\b{k}\b", v, text)
+    for k, v in (PRON_PIPER if engine == "piper" else PRON_CLONE):
+        text = re.sub(rf"(?<![A-Za-zÄÖÜäöü]){k}", v, text)
     return text
 
 
@@ -45,7 +60,7 @@ def clone_all(a, slugs, AUD):
         for n, (_, _, text) in enumerate(clips_of(spec), 1):
             wav = AUD / f"{slug}_{n}.wav"
             if not (a.reuse and wav.exists()):
-                jobs.append({"text": clean(text), "out": str(wav)})
+                jobs.append({"text": clean(text, "clone"), "out": str(wav)})
     if not jobs:
         return
     jf = AUD / "_clone_jobs.json"
@@ -87,7 +102,7 @@ def main():
         clips = clips_of(spec)
         for n, (t0, t1, text) in enumerate(clips, 1):
             wav = AUD / f"{slug}_{n}.wav"
-            if a.engine == "piper":
+            if a.engine == "piper" and not (a.reuse and wav.exists()):
                 subprocess.run([sys.executable, "-m", "piper", "-m", a.model, "-f", str(wav)],
                                input=clean(text).encode(), check=True, stderr=subprocess.DEVNULL)
             d = wav_len(wav)
@@ -96,7 +111,7 @@ def main():
             flag = f"  UEBERLAENGE +{over:.2f}s" if over > 0 else ""
             print(f"{slug} z{n}: Start {start:.2f}s, Dauer {d:.2f}s, Fenster bis {t1:.2f}s{flag}")
             if over > 0:
-                overruns.append((slug, n, round(over, 2), clean(text)))
+                overruns.append((slug, n, round(over, 2), clean(text, a.engine)))
             inputs += ["-i", str(wav)]
             ms = int(round(start * 1000))
             filters.append(f"[{n-1}:a]adelay={ms}|{ms}[a{n-1}]")
