@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'SG';font-weight:500;src:url(fonts/node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2)}
+@font-face{font-family:'SG';font-weight:700;src:url(fonts/node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2)}
+@font-face{font-family:'PM';font-weight:500;src:url(fonts/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2)}
+@font-face{font-family:'PM';font-weight:600;src:url(fonts/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-600-normal.woff2)}
+:root{--bg:#E9EDF3;--ink:#0D1117;--muted:#6A7586;--line:#C9D1DD;--blue:#2F5BFF;--orange:#E8590C;--green:#0CA678}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;color:var(--ink);font-family:'SG',sans-serif;
+ background-color:var(--bg);background-image:radial-gradient(#C3CBD8 2px,transparent 2px);background-size:40px 40px}
+#top{position:absolute;left:56px;right:56px;top:62px;display:flex;justify-content:space-between;font:500 28px 'PM',monospace;color:var(--muted)}
+.win{position:absolute;left:48px;width:984px;border:3px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
+.bar{height:64px;display:flex;align-items:center;gap:12px;padding:0 24px;font:500 26px 'PM',monospace;border-bottom:3px solid var(--ink)}
+.bar i{width:18px;height:18px;border:3px solid var(--ink);border-radius:50%}
+.bar span{margin-left:12px}
+#wa{top:120px;height:1190px;background:#fff}
+#wa .bar{background:#F4F6FA;color:var(--ink)}
+#wa .body{position:absolute;top:64px;left:0;right:0;bottom:0;background-image:linear-gradient(#EEF1F6 2px,transparent 2px),linear-gradient(90deg,#EEF1F6 2px,transparent 2px);background-size:56px 56px}
+#head{position:absolute;left:36px;top:24px;right:36px}
+#head .tag{display:inline-block;font:600 26px 'PM',monospace;color:#fff;background:var(--blue);padding:6px 16px;border-radius:8px;letter-spacing:.04em}
+#head h1{font-weight:700;font-size:62px;letter-spacing:-.03em;line-height:1.05;margin-top:16px}
+#chart{position:absolute;left:0;top:0}
+#big{position:absolute;left:56px;right:56px;top:1350px;height:330px;display:flex;align-items:center}
+#big div{font-weight:700;font-size:112px;letter-spacing:-.035em;line-height:1.0;text-transform:uppercase;transform-origin:left center}
+#say{position:absolute;left:56px;right:56px;top:1700px;font:500 34px/1.3 'PM',monospace;color:#3A4658;height:100px}
+#say mark{background:none;color:var(--blue);border-bottom:4px solid var(--blue)}
+#steps{position:absolute;left:56px;top:1816px;display:flex;gap:10px;align-items:center;font:600 26px 'PM',monospace;color:var(--ink)}
+#steps i{width:34px;height:34px;border:3px solid var(--ink);border-radius:6px;background:transparent}
+#steps i.on{background:var(--blue);border-color:var(--ink)}
+#steps span{margin-left:12px}
+#foot{position:absolute;left:56px;top:1868px;font:500 24px 'PM',monospace;color:var(--muted)}
+</style></head><body>
+<div id="top"><span>@kanalname</span><span id="ep"></span></div>
+<div class="win" id="wa"><div class="bar"><i></i><i></i><i></i><span id="wt"></span></div>
+ <div class="body"><svg id="chart" width="984" height="1126" viewBox="0 0 984 1126"></svg>
+  <div id="head"><span class="tag" id="tag"></span><h1 id="h1"></h1></div></div></div>
+<div id="big"><div id="bigt"></div></div><div id="say"></div>
+<div id="steps"></div><div id="foot">Lehrbeispiel, keine Anlageberatung</div>
+<script>
+const SPEC=__SPEC__;
+const C=SPEC.candles,N=C.length;
+const tc=new Array(N).fill(1e9);
+SPEC.reveal.forEach(([i0,i1,t0,dt])=>{for(let i=i0;i<=i1;i++)tc[i]=t0+(i-i0)*dt;});
+const W=984,H=1126,PT=210,PB=50,PL=36,PR=130,PMIN=SPEC.pmin,PMAX=SPEC.pmax;
+const sp=(W-PL-PR)/N,bw=sp*.52;
+const X=i=>PL+i*sp+sp/2,Y=p=>PT+(PMAX-p)/(PMAX-PMIN)*(H-PT-PB);
+const INK='#0D1117';
+const COL={blue:'#2F5BFF',orange:'#E8590C',green:'#0CA678',ink:INK,muted:'#6A7586'};
+const caps=SPEC.caps.map(c=>({a:c[0],b:c[1],s:c[2].split('*').map((x,i)=>[x,i%2]).filter(x=>x[0]),d:c[3]||{}}));
+const OUT=caps[caps.length-1].b+.1;
+document.getElementById('ep').textContent=SPEC.ep;document.getElementById('wt').textContent=SPEC.slug.replace(/[0-9]+/,'')+'.chart';const steps=document.getElementById('steps');steps.innerHTML=caps.map(()=>'<i></i>').join('')+'<span></span>';
+const sq=[...steps.querySelectorAll('i')],stl=steps.querySelector('span');
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),ease=x=>1-Math.pow(1-cl(x),3);
+function candle(i,t){
+  const p=ease((t-tc[i])/.35);if(p<=0)return'';
+  const [o,c,h,l]=C[i];const cc=o+(c-o)*p,hi=Math.max(o,cc)+(h-Math.max(o,c))*p,lo=Math.min(o,cc)-(Math.min(o,c)-l)*p;
+  const up=c>=o,x=X(i),yo=Y(o),yc=Y(cc),top=Math.min(yo,yc),hh=Math.max(Math.abs(yo-yc),3);
+  return `<line x1="${x}" x2="${x}" y1="${Y(hi)}" y2="${Y(lo)}" stroke="${INK}" stroke-width="3"/>
+  <rect x="${x-bw/2}" y="${top}" width="${bw}" height="${hh}" fill="${up?'#fff':INK}" stroke="${INK}" stroke-width="3"/>`;
+}
+const F='font-family="PM" font-weight="600" stroke="#fff" stroke-width="7" paint-order="stroke" stroke-linejoin="round"';
+const xe=i=>i==='end'?W-PR:X(i);
+function el(e,t,part){
+  const k=ease((t-e.at)/(e.dur||.5)); if(k<=0) return '';
+  const vis=e.until?Math.min(1,cl((e.until-t)/.2)):1; if(vis<=0) return ''; const o=k*vis;
+  const c=COL[e.color||'blue'];
+  if(e.type==='zone'){const x0=X(e.i0)-bw/2-6,x1=x0+((e.i1==='end'?W-PR:X(e.i1)+bw/2+6)-x0)*k,ya=Y(e.p1),yb=Y(e.p0);
+    const shape=`<rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="${c}" opacity="${.16*vis}"/><rect x="${x0}" y="${ya}" width="${x1-x0}" height="${yb-ya}" fill="none" stroke="${c}" stroke-width="3" stroke-dasharray="14 8" opacity="${vis}"/>`;
+    const lab=e.label?`<text ${F} x="${Math.max(40,x0)}" y="${e.labelBelow?yb+34:ya-14}" font-size="26" fill="${c}" opacity="${o}">${e.label}</text>`:'';
+    return part==='label'?lab:shape;}
+  if(e.type==='line'){const x0=X(e.i0),x1=x0+(xe(e.i1)-x0)*k;
+    return `<line x1="${x0}" x2="${x1}" y1="${Y(e.p)}" y2="${Y(e.p)}" stroke="${c}" stroke-width="3" stroke-dasharray="10 8" opacity="${vis}"/>`+
+      (e.label?`<text ${F} x="${Math.max(40,x0)}" y="${Y(e.p)+(e.labelBelow?34:-12)}" font-size="24" fill="${c}" opacity="${o}">${e.label}</text>`:'');}
+  if(e.type==='ring'){const pulse=1+.1*Math.sin(t*7);return `<circle cx="${X(e.i)}" cy="${Y(e.p)}" r="${(e.r||34)*k*pulse}" fill="none" stroke="${c}" stroke-width="5" opacity="${vis}"/>`;}
+  if(e.type==='label'){return `<text ${F} x="${X(e.i)}" y="${Y(e.p)}" font-size="${e.size||26}" fill="${c}" text-anchor="${e.anchor||'start'}" opacity="${o}">${e.text}</text>`;}
+  return '';
+}
+const KC={blue:'#2F5BFF',green:'#0CA678',orange:'#E8590C'};
+function countdown(t){const c=SPEC.countdown;if(!c||t<c[0]||t>c[1])return'';
+  const n=Math.min(3,3-Math.floor(3*(t-c[0])/(c[1]-c[0]))),fr=(3*(t-c[0])/(c[1]-c[0]))%1;
+  return `<circle cx="${W-80}" cy="${PT+10}" r="${58-8*fr}" fill="#fff" stroke="${INK}" stroke-width="6"/><text x="${W-80}" y="${PT+38}" font-family="SG" font-weight="700" font-size="84" text-anchor="middle" fill="${INK}">${n}</text>`;}
+function render(t){
+  let s='';
+  (SPEC.elements||[]).filter(e=>e.type==='zone').forEach(e=>s+=el(e,t,'shape'));
+  for(let i=0;i<N;i++)s+=candle(i,t);
+  (SPEC.elements||[]).forEach(e=>s+=el(e,t,'label'));
+  s+=countdown(t);
+  document.getElementById('chart').innerHTML=s;
+  const idx=Math.max(0,caps.reduce((m,c,i)=>t>=c.a?i:m,-1)),cp=caps[idx],d=cp.d;
+  const tg=document.getElementById('tag');tg.textContent=d.k||SPEC.tag;tg.style.background=KC[d.kc]||KC.blue;
+  document.getElementById('h1').textContent=d.h||'';
+  const k=ease((t-cp.a)/.3),bt=document.getElementById('bigt');
+  bt.textContent=d.big||'';bt.style.color=({ink:INK,blue:KC.blue,green:KC.green,orange:KC.orange})[d.col||'ink'];
+  bt.style.opacity=t<cp.a?0:k;bt.style.transform=`scale(${.94+.06*k})`;
+  const len=d.big?d.big.length:0;bt.style.fontSize=(len>26?92:len>16?104:116)+'px';
+  document.getElementById('say').innerHTML=cp.s.map(([x,h])=>h?`<mark>${x}</mark>`:x).join('');
+  sq.forEach((e,i)=>e.className=(idx>=i&&t>=caps[0].a)?'on':'');
+  stl.textContent=`schritt ${String(idx+1).padStart(2,'0')}/${String(caps.length).padStart(2,'0')}`;
+}
+render(0);
+</script></body></html>

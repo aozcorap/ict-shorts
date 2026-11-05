@@ -28,17 +28,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
     ap.add_argument("--no-mux", action="store_true")
+    ap.add_argument("--spec-dir", default="specs")
+    ap.add_argument("--audio-dir", default="audio")
+    ap.add_argument("--out-dir", default="videos")
     ap.add_argument("slugs", nargs="*")
     a = ap.parse_args()
     slugs = a.slugs or [f"liq{i:02d}" for i in range(1, 14)]
-    (ROOT / "audio").mkdir(exist_ok=True)
-    (ROOT / "videos").mkdir(exist_ok=True)
+    AUD, OUT = ROOT / a.audio_dir, ROOT / a.out_dir
+    AUD.mkdir(exist_ok=True)
+    OUT.mkdir(exist_ok=True)
     overruns = []
     for slug in slugs:
-        spec = json.loads((ROOT / "specs" / f"{slug}.json").read_text())
+        spec = json.loads((ROOT / a.spec_dir / f"{slug}.json").read_text())
         inputs, filters = [], []
-        for n, (t0, t1, text) in enumerate(spec["caps"], 1):
-            wav = ROOT / "audio" / f"{slug}_{n}.wav"
+        for n, (t0, t1, text, *_) in enumerate(spec["caps"], 1):
+            wav = AUD / f"{slug}_{n}.wav"
             subprocess.run([sys.executable, "-m", "piper", "-m", a.model, "-f", str(wav)],
                            input=clean(text).encode(), check=True, stderr=subprocess.DEVNULL)
             d = wav_len(wav)
@@ -60,13 +64,13 @@ def main():
         k = len(spec["caps"])
         graph = ";".join(filters) + ";" + "".join(f"[a{i}]" for i in range(k)) + \
             f"amix=inputs={k}:normalize=0:dropout_transition=0[m]"
-        mix = ROOT / "audio" / f"{slug}_mix.wav"
+        mix = AUD / f"{slug}_mix.wav"
         subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", graph,
                         "-map", "[m]", str(mix)], check=True)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-i", str(mix),
                         "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                        str(ROOT / "videos" / f"{slug}.mp4")], check=True)
-        print(f"{slug}: videos/{slug}.mp4 fertig")
+                        str(OUT / f"{slug}.mp4")], check=True)
+        print(f"{slug}: {a.out_dir}/{slug}.mp4 fertig")
     print("\nUEBERLAENGEN:" if overruns else "\nKeine Ueberlaengen.")
     for s, n, o, t in overruns:
         print(f"  {s} Zeile {n}: +{o}s  \"{t}\"")
