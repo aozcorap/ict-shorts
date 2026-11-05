@@ -1,0 +1,207 @@
+{
+ "slug": "liquiditaet07",
+ "ep": "liquidität_07",
+ "tag": "LIQUIDITÄT 07",
+ "title": "FOMO-Impuls",
+ "titleSize": 84,
+ "sub": "wenn alle hinterherrennen",
+ "pmin": 50,
+ "pmax": 78,
+ "candles": [
+  [
+   56,
+   57,
+   58,
+   55
+  ],
+  [
+   57,
+   56,
+   58,
+   55
+  ],
+  [
+   56,
+   57,
+   58,
+   55.5
+  ],
+  [
+   57,
+   56.5,
+   58,
+   56
+  ],
+  [
+   56.5,
+   64,
+   65,
+   56
+  ],
+  [
+   64,
+   69,
+   70,
+   63.5
+  ],
+  [
+   69,
+   73,
+   74,
+   68.5
+  ],
+  [
+   73,
+   71,
+   74,
+   70
+  ],
+  [
+   71,
+   72.5,
+   73.5,
+   70.5
+  ],
+  [
+   72.5,
+   70,
+   73,
+   69.5
+  ],
+  [
+   70,
+   66,
+   71,
+   65
+  ],
+  [
+   66,
+   62,
+   67,
+   61
+  ],
+  [
+   62,
+   58,
+   63,
+   57
+  ]
+ ],
+ "reveal": [
+  [
+   0,
+   3,
+   0.3,
+   0.3
+  ],
+  [
+   4,
+   6,
+   4.3,
+   0.7
+  ],
+  [
+   7,
+   9,
+   12.2,
+   0.5
+  ],
+  [
+   10,
+   12,
+   17,
+   0.8
+  ]
+ ],
+ "elements": [
+  {
+   "type": "label",
+   "at": 5,
+   "until": 12,
+   "i": 4,
+   "p": 61,
+   "text": "// impuls",
+   "color": "green",
+   "anchor": "end"
+  },
+  {
+   "type": "ring",
+   "at": 8.5,
+   "until": 14,
+   "i": 6,
+   "p": 74,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 8.5,
+   "until": 14,
+   "i": 6,
+   "p": 77,
+   "text": "FOMO: hinterher!",
+   "color": "orange",
+   "anchor": "end"
+  },
+  {
+   "type": "zone",
+   "at": 13.6,
+   "i0": 7,
+   "i1": "end",
+   "p0": 67.5,
+   "p1": 70,
+   "color": "orange",
+   "label": "STOPPS DER NACHZÜGLER",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 17.8,
+   "until": 24,
+   "i": 11,
+   "p": 62,
+   "color": "orange"
+  }
+ ],
+ "caps": [
+  [
+   0.8,
+   4,
+   "Plötzlich laufen *große Kerzen* in eine Richtung."
+  ],
+  [
+   4,
+   8,
+   "Viele denken: Da muss ich *dabei* sein!"
+  ],
+  [
+   8,
+   12,
+   "Das nennt man *FOMO*: Angst, etwas zu verpassen."
+  ],
+  [
+   12,
+   16,
+   "Sie steigen spät ein, die Stopps liegen *nah*."
+  ],
+  [
+   16,
+   20,
+   "So sammelt sich *Liquidität* unter dem Rücksetzer."
+  ],
+  [
+   20,
+   24,
+   "Laut ICT ist ein Impuls oft ein *Köder*."
+  ],
+  [
+   24,
+   30,
+   "Welches Thema soll als Nächstes kommen? Schreib es in die Kommentare."
+  ]
+ ],
+ "next": {
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ }
+}
