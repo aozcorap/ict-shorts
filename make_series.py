@@ -32,7 +32,7 @@ def build():
             p["titleSize"] = min(s.get("titleSize", 104), 84)
             p["caps"] = [list(c[:3]) for c in s["caps"]]
             if k == 1:  # Titelkarte vorn, alles um D nach hinten
-                p["intro"] = {"a": 0.1, "b": D, "voice": v["voice"], "title": v["title"], "sub": v["sub"], "tag": "LIQUIDITÄT"}
+                p["intro"] = {"a": 0.1, "b": 3.8, "voice": v["voice"], "title": v["title"], "sub": v["sub"], "tag": "LIQUIDITÄT"}
                 p["reveal"] = [[a, b, t + D, dt] for a, b, t, dt in s["reveal"]]
                 for e in p["elements"]:
                     e["at"] += D

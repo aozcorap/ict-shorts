@@ -70,7 +70,7 @@ document.getElementById('ep').textContent=SPEC.ep;document.getElementById('wt').
 {const I=SPEC.intro||{};document.getElementById('itag').textContent=I.tag||SPEC.tag;const ih=document.getElementById('ih1');ih.textContent=I.title||SPEC.title;ih.style.fontSize=((I.title||SPEC.title).length>12?132:190)+'px';document.getElementById('isub').textContent=I.sub||SPEC.sub;}
 const h1=document.getElementById('h1');h1.textContent=SPEC.title;h1.style.fontSize=(SPEC.titleSize||104)+'px';
 document.getElementById('sub').textContent=SPEC.sub;
-document.getElementById('osm').textContent='$ next --'+SPEC.next.ep;document.getElementById('oh2').innerHTML=SPEC.next.title;
+if(SPEC.next){document.getElementById('osm').textContent='$ next --'+SPEC.next.ep;document.getElementById('oh2').innerHTML=SPEC.next.title;}
 const steps=document.getElementById('steps');steps.innerHTML=caps.map(()=>'<i></i>').join('')+'<span></span>';
 const sq=[...steps.querySelectorAll('i')],stl=steps.querySelector('span');
 const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),ease=x=>1-Math.pow(1-cl(x),3);
@@ -99,7 +99,7 @@ function el(e,t,part){
   return '';
 }
 function render(t){
-  const I=SPEC.intro,io=document.getElementById('intro');if(I){const k=1-ease((t-(I.b-.5))/.5);io.style.opacity=k;io.style.display=k<=0?'none':'block';io.querySelector('h1').style.transform=`translateY(${(1-ease(t/.5))*24}px)`;}
+  const I=SPEC.intro,io=document.getElementById('intro');if(!I)io.style.display='none';if(I){const k=1-ease((t-(I.b-.5))/.5);io.style.opacity=k;io.style.display=k<=0?'none':'block';io.querySelector('h1').style.transform=`translateY(${(1-ease(t/.5))*24}px)`;}
   let s='';
   (SPEC.elements||[]).filter(e=>e.type==='zone').forEach(e=>s+=el(e,t,'shape'));
   for(let i=0;i<N;i++)s+=candle(i,t);
