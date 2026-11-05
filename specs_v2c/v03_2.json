@@ -1,0 +1,197 @@
+{
+ "slug": "liquiditaet05",
+ "ep": "liquidität_05",
+ "tag": "LIQUIDITÄT 05",
+ "title": "Liquidity Raid",
+ "titleSize": 84,
+ "sub": "der kurze ausflug über das hoch",
+ "pmin": 44,
+ "pmax": 74,
+ "candles": [
+  [
+   58,
+   61,
+   62,
+   57
+  ],
+  [
+   61,
+   64,
+   65,
+   60
+  ],
+  [
+   64,
+   63,
+   65,
+   62
+  ],
+  [
+   63,
+   65.5,
+   66,
+   62.5
+  ],
+  [
+   65.5,
+   61,
+   66,
+   60
+  ],
+  [
+   61,
+   58,
+   62,
+   57
+  ],
+  [
+   58,
+   60,
+   61,
+   57.5
+  ],
+  [
+   60,
+   64,
+   65,
+   59.5
+  ],
+  [
+   64,
+   65.5,
+   66,
+   63
+  ],
+  [
+   65.5,
+   62,
+   66,
+   61
+  ],
+  [
+   62,
+   60,
+   63,
+   59
+  ],
+  [
+   60,
+   64,
+   65,
+   59.5
+  ],
+  [
+   64,
+   69,
+   70,
+   63.5
+  ],
+  [
+   69,
+   63,
+   69.5,
+   62
+  ],
+  [
+   63,
+   57,
+   63.5,
+   56
+  ],
+  [
+   57,
+   52,
+   58,
+   51
+  ],
+  [
+   52,
+   50,
+   53,
+   49
+  ]
+ ],
+ "reveal": [
+  [
+   0,
+   11,
+   0.3,
+   0.3
+  ],
+  [
+   12,
+   12,
+   9.05,
+   0
+  ],
+  [
+   13,
+   16,
+   12.75,
+   0.8
+  ]
+ ],
+ "elements": [
+  {
+   "type": "line",
+   "at": 4.55,
+   "i0": 3,
+   "i1": "end",
+   "p": 66,
+   "color": "muted",
+   "label": "// altes hoch"
+  },
+  {
+   "type": "zone",
+   "at": 4.95,
+   "i0": 3,
+   "i1": "end",
+   "p0": 66,
+   "p1": 70.5,
+   "color": "blue",
+   "label": "STOPPS DER VERKÄUFER",
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 9.05,
+   "until": 14.55,
+   "i": 12,
+   "p": 70,
+   "color": "blue"
+  }
+ ],
+ "caps": [
+  [
+   0.8,
+   4.55,
+   "Der Preis läuft kurz über ein *altes Hoch*."
+  ],
+  [
+   4.55,
+   8.55,
+   "Dort liegen die Stopps der *Verkäufer*."
+  ],
+  [
+   8.55,
+   12.55,
+   "Sie lösen aus und werden zu *Kauforders*."
+  ],
+  [
+   12.55,
+   16.55,
+   "Danach fällt der Preis oft *zurück*."
+  ],
+  [
+   16.55,
+   20.55,
+   "ICT nennt das *Stop Hunt*: Jagd auf Stopps."
+  ],
+  [
+   20.55,
+   24.55,
+   "Ob es ein Raid war, sieht man erst *hinterher*."
+  ]
+ ],
+ "noOutro": true
+}

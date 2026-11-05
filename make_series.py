@@ -50,16 +50,16 @@ def build():
     print("Specs geschrieben:", sum(len(v["parts"]) for v in VIDEOS.values()), "Teile")
 
 
-def concat():
-    (ROOT / "videos_v2").mkdir(exist_ok=True)
+def concat(parts_dir="videos_teile", out_dir="videos_v2", suffix=""):
+    (ROOT / out_dir).mkdir(exist_ok=True)
     for vid, v in VIDEOS.items():
-        parts = [ROOT / "videos_teile" / f"{vid}_{k}.mp4" for k in range(1, len(v["parts"]) + 1)]
-        lst = ROOT / "videos_teile" / f"_{vid}.txt"
+        parts = [ROOT / parts_dir / f"{vid}_{k}.mp4" for k in range(1, len(v["parts"]) + 1)]
+        lst = ROOT / parts_dir / f"_{vid}.txt"
         lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy",
-                        str(ROOT / "videos_v2" / f"{vid}.mp4")], check=True)
+                        str(ROOT / out_dir / f"{vid}{suffix}.mp4")], check=True)
         lst.unlink()
         print(vid, "fertig")
 
 
-{"build": build, "concat": concat}[sys.argv[1]]()
+{"build": build, "concat": concat}[sys.argv[1]](*sys.argv[2:])

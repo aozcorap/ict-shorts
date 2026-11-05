@@ -2,7 +2,7 @@
 const { chromium } = require('playwright'); const fs=require('fs'),path=require('path'),{execSync}=require('child_process');
 (async()=>{const dir=__dirname,eng=fs.readFileSync(path.join(dir,'engine_v2.html'),'utf8');
  const b=await chromium.launch();
- for(const f of process.argv.slice(2)){const spec=JSON.parse(fs.readFileSync(path.join(dir,'specs_v2',f+'.json'),'utf8'));
+ for(const f of process.argv.slice(2)){const spec=JSON.parse(fs.readFileSync(path.join(dir,process.env.SPECDIR||'specs_v2',f+'.json'),'utf8'));
   const html=path.join(dir,`_${f}.html`);fs.writeFileSync(html,eng.replace('__SPEC__',JSON.stringify(spec)));
   const fr=path.join(dir,'fr_'+f);fs.rmSync(fr,{recursive:true,force:true});fs.mkdirSync(fr);
   const p=await b.newPage({viewport:{width:1080,height:1920}});await p.goto('file://'+html);await p.waitForTimeout(400);

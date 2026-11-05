@@ -1,0 +1,261 @@
+{
+ "slug": "liq03",
+ "ep": "liquidität_03",
+ "tag": "LIQUIDITÄT 03",
+ "title": "Glatt vs. zackig",
+ "titleSize": 84,
+ "sub": "welche level zählen?",
+ "pmin": 50,
+ "pmax": 74,
+ "candles": [
+  [
+   56,
+   58,
+   59,
+   55
+  ],
+  [
+   58,
+   56,
+   60,
+   55.5
+  ],
+  [
+   56,
+   59,
+   60,
+   55
+  ],
+  [
+   59,
+   57,
+   60.5,
+   56
+  ],
+  [
+   57,
+   60,
+   61,
+   56
+  ],
+  [
+   60,
+   57,
+   61,
+   56.5
+  ],
+  [
+   57,
+   59,
+   60,
+   56
+  ],
+  [
+   59,
+   58,
+   60.5,
+   57
+  ],
+  [
+   58,
+   61,
+   62,
+   57.5
+  ],
+  [
+   61,
+   64,
+   65,
+   60.5
+  ],
+  [
+   64,
+   66.5,
+   67,
+   64
+  ],
+  [
+   66.5,
+   63,
+   67,
+   62
+  ],
+  [
+   63,
+   61,
+   64,
+   60
+  ],
+  [
+   61,
+   64,
+   65,
+   60.5
+  ],
+  [
+   64,
+   66,
+   67.2,
+   63.5
+  ],
+  [
+   66,
+   63,
+   66.5,
+   62
+  ],
+  [
+   63,
+   62,
+   64,
+   61
+  ],
+  [
+   62,
+   65,
+   66,
+   61.5
+  ],
+  [
+   65,
+   70,
+   71,
+   64.5
+  ],
+  [
+   70,
+   66,
+   71,
+   65.5
+  ],
+  [
+   66,
+   60,
+   67,
+   59
+  ],
+  [
+   60,
+   55,
+   61,
+   54
+  ]
+ ],
+ "reveal": [
+  [
+   0,
+   7,
+   3.9499999999999997,
+   0.3
+  ],
+  [
+   8,
+   15,
+   11.85,
+   0.4
+  ],
+  [
+   16,
+   21,
+   19.849999999999998,
+   0.6
+  ]
+ ],
+ "elements": [
+  {
+   "type": "zone",
+   "at": 7.65,
+   "i0": 0,
+   "i1": 7,
+   "p0": 54,
+   "p1": 61.5,
+   "color": "orange",
+   "label": "ZACKIG",
+   "dur": 1.2
+  },
+  {
+   "type": "line",
+   "at": 14.15,
+   "i0": 10,
+   "i1": "end",
+   "p": 67,
+   "color": "blue",
+   "label": "GLATT: kaum berührt"
+  },
+  {
+   "type": "ring",
+   "at": 15.85,
+   "until": 19.65,
+   "i": 10,
+   "p": 67,
+   "color": "blue"
+  },
+  {
+   "type": "ring",
+   "at": 16.05,
+   "until": 19.65,
+   "i": 14,
+   "p": 67.2,
+   "color": "blue"
+  },
+  {
+   "type": "ring",
+   "at": 21.049999999999997,
+   "until": 27.65,
+   "i": 18,
+   "p": 71,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 21.25,
+   "until": 27.65,
+   "i": 17,
+   "p": 73,
+   "text": "// danach: zackig",
+   "color": "orange",
+   "anchor": "end"
+  }
+ ],
+ "caps": [
+  [
+   4.45,
+   7.65,
+   "Wo ist der Markt *glatt*, wo *zackig*?"
+  ],
+  [
+   7.65,
+   11.65,
+   "*Zackig*: Der Preis war schon oft hier."
+  ],
+  [
+   11.65,
+   15.65,
+   "*Glatt*: saubere Hochs, kaum berührt."
+  ],
+  [
+   15.65,
+   19.65,
+   "Dort liegen laut ICT noch viele *Stopps*."
+  ],
+  [
+   19.65,
+   23.65,
+   "Wird das Level geholt, ist es danach *zackig*."
+  ],
+  [
+   23.65,
+   27.65,
+   "Suche zuerst die *glatten* Level."
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 4.45,
+  "voice": "Welche Level zählen? Glatt, zackig und Equal Highs.",
+  "title": "Welche Level zählen?",
+  "sub": "glatt, zackig, equal highs",
+  "tag": "LIQUIDITÄT"
+ },
+ "noOutro": true
+}
