@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Erzeugt eine ruhige, eigene Hintergrundmusik (Pad + leichte Zupfnoten), Tonart a-Moll, 90 BPM. Keine Fremdlizenz.
 
-  python3 make_music.py DAUER_SEKUNDEN AUSGABE.wav
+  python3 make_music.py DAUER_SEKUNDEN AUSGABE.wav [rhythm]
+Mit "rhythm": zusaetzlich leiser Beat (Kick auf 1 und 3, Snare auf 2 und 4, Hi-Hat auf den Achteln).
 """
 import sys, numpy as np, soundfile as sf
 from scipy.signal import lfilter
@@ -61,6 +62,28 @@ d1 = int(0.75 * beat * sr)
 echo = np.zeros(N); echo[d1:] += 0.4 * pl[:-d1]
 pl = pl + echo
 L += pl * 0.9; R += pl * 1.1
+if len(sys.argv) > 3 and sys.argv[3] == "rhythm":
+    dr = np.zeros(N)
+    def put(i0, v):
+        e = min(N, i0 + len(v))
+        if i0 < N: dr[i0:e] += v[: e - i0]
+    kt = np.arange(int(0.35 * sr)) / sr
+    kick = np.sin(2 * np.pi * (45 * kt + 75 * (1 - np.exp(-kt * 28)) / 28)) * np.exp(-kt / 0.11) * 0.30
+    st = np.arange(int(0.25 * sr)) / sr
+    snare = (rng.standard_normal(len(st)) * 0.5 + np.sin(2 * np.pi * 190 * st)) * np.exp(-st / 0.07) * 0.07
+    snare = lowpass(snare, 5000) - lowpass(snare, 300)
+    ht = np.arange(int(0.08 * sr)) / sr
+    hat = rng.standard_normal(len(ht)); hat = hat - lowpass(hat, 6000)
+    hat = hat * np.exp(-ht / 0.018) * 0.12
+    n8 = 0
+    while n8 * step < dur + 2.5:
+        tt0 = n8 * step; i0 = int(tt0 * sr); pos = n8 % 8
+        if pos in (0, 4): put(i0, kick)
+        if pos in (2, 6): put(i0, snare)
+        if n8 % 2 == 1: put(i0, hat * 0.8)
+        elif pos not in (0, 4): put(i0, hat * 0.5)
+        n8 += 1
+    L += dr; R += dr
 y = np.stack([L, R], 1)[: int(sr * dur)]
 fade = np.ones(len(y)); n1 = int(sr * 1.5); n2 = int(sr * 2.5)
 fade[:n1] = np.linspace(0, 1, n1); fade[-n2:] = np.linspace(1, 0, n2)
