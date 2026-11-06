@@ -11,6 +11,32 @@ Kurze Erklärvideos (hochkant, 1080x1920) zu Smart-Money-/ICT-Konzepten, **autom
   - `videos_v8/v02..v06.mp4`: Klon-Stimme (Chatterbox) + Musik Fassung 3.
   - `videos_v3/v01..v06.mp4`: Standardstimme Piper (Thorsten-medium), Fließtext.
 
+## Übersicht: was ist aktuell, was veraltet (alles auf `main`)
+
+**Fertige Videos (Stand Ende Sitzung 1):**
+
+| Ordner | Inhalt | Status |
+|---|---|---|
+| `videos_v7/` | v01 mit ECHTER Stimme des Nutzers (Handy-Aufnahme), vier Fassungen | `v01_handy_klar_musik_beat_leise.mp4` = **beste Fassung** (Musik Fassung 3) |
+| `videos_v8/` | v02-v06 mit Klon-Stimme + Musik Fassung 3 | **aktuellster Stand**, Stimme dem Nutzer nicht gut genug |
+| `videos_v3/` | v01-v06, Standardstimme Piper, Fließtext, ohne Musik | brauchbare Vergleichsbasis |
+| `videos_v6_handy/`, `videos_v5_clone/` | Zwischenstände v01 | überholt |
+| `videos_v2/`, `videos_v2_clone/`, `videos_v3_clone/`, `videos_v4_clone/` | ältere Testfassungen | überholt |
+| `videos/` | ursprüngliche 13 Einzelfolgen ohne Ton | überholt |
+
+**Layout / Optik (aktuell):** `engine_v2.html`, gerendert mit `render_v2.js`.
+- Oben ein Fenster "…chart" mit Titel, Kapitel-Tag und Kerzenchart (Zonen, Linien, Ringe, Labels).
+- Darunter ein Fenster "erklaerung.log" (Konsole) mit kurzen Stichworten, getippt, Schlüsselwort markiert; Schrittzähler unten.
+- Titelkarte am Anfang (ca. 3,8 s, mit gesprochenem Titel), Abschlusskarte "Welches Thema als Nächstes?" am Ende.
+- Fußzeile "Lehrbeispiel, keine Anlageberatung", oben Platzhalter `@kanalname` (Kanalname noch offen).
+- Der alte Look (`engine.html`) ist überholt. Kein Screenshot im Repo, nur der Code; ein Standbild lässt sich mit `render_v2.js` erzeugen.
+
+**Specs (Inhalt je Video):** v01 `specs_v7/v01.json`, v02-v06 `specs_v8f/*.json` (Videos bestehen aus Teilen `vNN_K`). Sprechtexte: `sprechzettel/`. Ausgangsmaterial: `specs/liq01-13.json`, Contentplan `plan/`.
+
+**Audio:** `audio_v7/` (Clips aus der Nutzer-Aufnahme für v01), `audio_v8/` (Klon-Zeilen v02-v06), weitere `audio_*` sind Testvarianten. **Musik:** `music/ruhig_beat_63s.m4a` (Fassung 3 Basis), Erzeugung `make_music.py`.
+
+**Nicht im Repo:** Stimmprobe und Roh-Aufnahmen des Nutzers (`voice_ref/`, nur lokal), Python-venv für den Klon, Zwischenordner `videos_teile*/`, `fr_*/`, `_*.html`, `s_*.png` (alle gitignored, werden beim Rendern neu erzeugt).
+
 ## Kernproblem für die nächste Sitzung
 Der Nutzer will **vollautomatisch, ohne Aufwand** (später z. B. 40 Videos). Ergebnis bisher:
 - Standardstimme (Piper) klingt künstlich/emotionslos, englische Begriffe (ICT, Sell-Side, Raid, Chart) werden deutsch gelesen.
