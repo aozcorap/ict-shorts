@@ -74,3 +74,9 @@ Der Nutzer will **vollautomatisch, ohne Aufwand** (später z. B. 40 Videos). Erg
 - "ICT" nicht in den Kanalnamen (Marke), Handles auf TikTok/YouTube sind nicht geprüft.
 - Repo ist durch viele Testvarianten aufgebläht (`.git` ca. 320 MB, viele `audio_*`/`videos_*`/`specs_*`-Ordner). Vorschlag: Endstand festlegen, Rest aufräumen oder in ein Archiv verschieben.
 - Bekannte Bildschwächen aus der README (Beschriftungen über Kerzen) teils offen.
+
+## Sitzung 2: Pilot-Fassung v9 (Piper, kostenlos)
+- Plan: 6 Videos, 2 Wochen, 3 Posts/Woche (Mo/Mi/Fr), von Hand posten. A/B: `videos_v9/v01,v03,v05` mit Piper-Stimme (Thorsten) + Musik, `v02,v04,v06` ohne Sprecher (nur Untertitel + Musik).
+- Texte: v01 aus `specs_v7`, v02-v06 aus `specs_v8` (Zeiten per `fit_windows.py` an Piper angepasst -> `specs_v9/`). Bau: `finish_v9.py` (Teile zusammenfuegen, Ton ueber die Gesamtlaenge, Musik). Die Mischung von "Fassung 3" war nicht als Skript vorhanden; Werte in `finish_v9.py` sind rekonstruiert (Sprecher -16 LUFS, Musik -38 LUFS, abgesenkt beim Sprechen; stumm: Musik -24 LUFS).
+- Nicht gehoert vom Assistenten: nur Lautstaerke und Bild geprueft. Aussprache englischer Begriffe (Lautschrift) ungeprueft.
+- Kein ElevenLabs/Klon eingerichtet. Kein Host/Zugang ausser pip/npm/huggingface (Piper-Modell) genutzt.

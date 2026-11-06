@@ -1,0 +1,241 @@
+{
+ "slug": "liquiditaet05",
+ "ep": "liquidität_05",
+ "tag": "LIQUIDITÄT 05",
+ "title": "Liquidity Raid",
+ "sub": "der kurze ausflug über das hoch",
+ "pmin": 44,
+ "pmax": 74,
+ "candles": [
+  [
+   58,
+   61,
+   62,
+   57
+  ],
+  [
+   61,
+   64,
+   65,
+   60
+  ],
+  [
+   64,
+   63,
+   65,
+   62
+  ],
+  [
+   63,
+   65.5,
+   66,
+   62.5
+  ],
+  [
+   65.5,
+   61,
+   66,
+   60
+  ],
+  [
+   61,
+   58,
+   62,
+   57
+  ],
+  [
+   58,
+   60,
+   61,
+   57.5
+  ],
+  [
+   60,
+   64,
+   65,
+   59.5
+  ],
+  [
+   64,
+   65.5,
+   66,
+   63
+  ],
+  [
+   65.5,
+   62,
+   66,
+   61
+  ],
+  [
+   62,
+   60,
+   63,
+   59
+  ],
+  [
+   60,
+   64,
+   65,
+   59.5
+  ],
+  [
+   64,
+   69,
+   70,
+   63.5
+  ],
+  [
+   69,
+   63,
+   69.5,
+   62
+  ],
+  [
+   63,
+   57,
+   63.5,
+   56
+  ],
+  [
+   57,
+   52,
+   58,
+   51
+  ],
+  [
+   52,
+   50,
+   53,
+   49
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   11,
+   0.3,
+   0.3
+  ],
+  [
+   12,
+   12,
+   8.85,
+   0
+  ],
+  [
+   13,
+   16,
+   12.549999999999999,
+   0.8
+  ]
+ ],
+ "elements": [
+  {
+   "type": "line",
+   "at": 4.35,
+   "i0": 3,
+   "i1": "end",
+   "p": 66,
+   "color": "muted",
+   "label": "// altes hoch"
+  },
+  {
+   "type": "zone",
+   "at": 4.75,
+   "i0": 3,
+   "i1": "end",
+   "p0": 66,
+   "p1": 70.5,
+   "color": "blue",
+   "label": "STOPPS DER VERKÄUFER",
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 8.85,
+   "until": 14.35,
+   "i": 12,
+   "p": 70,
+   "color": "blue"
+  }
+ ],
+ "_old": [
+  [
+   0.8,
+   4
+  ],
+  [
+   4,
+   8
+  ],
+  [
+   8,
+   12
+  ],
+  [
+   12,
+   16
+  ],
+  [
+   16,
+   20
+  ],
+  [
+   20,
+   24
+  ]
+ ],
+ "caps": [
+  [
+   0.8,
+   4.35,
+   "Preis läuft über ein *altes Hoch*",
+   {
+    "voice": "Jetzt wird es spannend: Der Preis läuft kurz über ein altes Hoch!"
+   }
+  ],
+  [
+   4.35,
+   8.35,
+   "Dort: Stopps der *Verkäufer*",
+   {
+    "voice": "Dort liegen die Stopps der Verkäufer."
+   }
+  ],
+  [
+   8.35,
+   12.35,
+   "Sie lösen aus: *Kauforders*",
+   {
+    "voice": "Sie lösen aus und werden zu Kauforders!"
+   }
+  ],
+  [
+   12.35,
+   16.35,
+   "Danach fällt der Preis oft *zurück*",
+   {
+    "voice": "Und danach fällt der Preis oft wieder zurück."
+   }
+  ],
+  [
+   16.35,
+   20.35,
+   "*Stop Hunt*: Jagd auf Stopps",
+   {
+    "voice": "Das nennt man Stop Hunt, die Jagd auf Stopps!"
+   }
+  ],
+  [
+   20.35,
+   24.35,
+   "Ob *Raid*: erst hinterher",
+   {
+    "voice": "Ob es ein Liquidity Raid war, siehst du erst hinterher."
+   }
+  ]
+ ],
+ "noOutro": true
+}
