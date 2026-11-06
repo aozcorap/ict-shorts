@@ -145,14 +145,14 @@
   [
    0,
    21,
-   0.3,
-   0.15
+   0.0,
+   0.14
   ]
  ],
  "elements": [
   {
    "type": "line",
-   "at": 4.5,
+   "at": 3.77,
    "i0": 10,
    "i1": "end",
    "p": 67,
@@ -161,7 +161,7 @@
   },
   {
    "type": "zone",
-   "at": 8.2,
+   "at": 6.33,
    "i0": 0,
    "i1": 7,
    "p0": 54,
@@ -172,8 +172,8 @@
   },
   {
    "type": "label",
-   "at": 12.4,
-   "until": 20,
+   "at": 9.47,
+   "until": 15.77,
    "i": 18,
    "p": 73,
    "text": "// 09:30",
@@ -182,16 +182,16 @@
   },
   {
    "type": "ring",
-   "at": 16.4,
-   "until": 24,
+   "at": 12.8,
+   "until": 19.03,
    "i": 18,
    "p": 71,
    "color": "orange"
   },
   {
    "type": "label",
-   "at": 16.4,
-   "until": 24,
+   "at": 12.8,
+   "until": 19.03,
    "i": 18,
    "p": 74,
    "text": "HOCH",
@@ -200,16 +200,16 @@
   },
   {
    "type": "ring",
-   "at": 17.2,
-   "until": 24,
+   "at": 13.46,
+   "until": 19.03,
    "i": 21,
    "p": 54,
    "color": "green"
   },
   {
    "type": "label",
-   "at": 17.2,
-   "until": 24,
+   "at": 13.46,
+   "until": 19.03,
    "i": 21,
    "p": 51,
    "text": "TIEF",
@@ -217,84 +217,58 @@
    "anchor": "end"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.8,
-   4,
+   0.5,
+   3.43,
    "Übung: *10 Tage* Chart-Training",
    {
     "voice": "Jetzt bist du dran: Zehn Tage Chart-Training!"
    }
   ],
   [
-   4,
-   8,
+   3.43,
+   6.18,
    "Öffne den *1-Minuten-Chart*",
    {
     "voice": "Öffne den Ein-Minuten-Chart eines Tages."
    }
   ],
   [
-   8,
-   12,
+   6.18,
+   9.14,
    "Markiere *glatte* und *zackige* Level",
    {
     "voice": "Markiere die glatten und die zackigen Level."
    }
   ],
   [
-   12,
-   16,
+   9.14,
+   12.47,
    "Notiere die *Uhrzeit*",
    {
     "voice": "Notiere die Uhrzeit, zu der ein Level geholt wurde."
    }
   ],
   [
-   16,
-   20,
+   12.47,
+   15.77,
    "Notiere *Hoch* und *Tief*",
    {
     "voice": "Und notiere auch Hoch und Tief des Tages."
    }
   ],
   [
-   20,
-   24,
+   15.77,
+   19.03,
    "Nach 10 Tagen: *Muster*?",
    {
     "voice": "Nach zehn Tagen siehst du Muster, oder eben nicht."
    }
   ],
   [
-   24,
-   30,
+   19.03,
+   23.07,
    "Welches *Thema* soll als Nächstes kommen?",
    {
     "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"

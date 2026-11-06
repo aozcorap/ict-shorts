@@ -103,26 +103,26 @@
   [
    0,
    6,
-   0.3,
-   0.45
+   0.0,
+   0.54
   ],
   [
    7,
    12,
-   8.569999999999999,
-   0.45
+   7.02,
+   0.27
   ],
   [
    13,
    14,
-   16.77,
-   0.7
+   12.46,
+   0.41
   ]
  ],
  "elements": [
   {
    "type": "zone",
-   "at": 4.57,
+   "at": 4.5,
    "i0": 1,
    "i1": 6,
    "p0": 66,
@@ -133,7 +133,7 @@
   },
   {
    "type": "line",
-   "at": 12.569999999999999,
+   "at": 9.42,
    "i0": 7,
    "i1": "end",
    "p": 66,
@@ -142,8 +142,8 @@
   },
   {
    "type": "ring",
-   "at": 12.87,
-   "until": 18.37,
+   "at": 9.64,
+   "until": 13.41,
    "i": 11,
    "p": 64,
    "color": "blue",
@@ -151,8 +151,8 @@
   },
   {
    "type": "label",
-   "at": 12.87,
-   "until": 18.37,
+   "at": 9.64,
+   "until": 13.41,
    "i": 11,
    "p": 57.5,
    "text": "// tieferes hoch rechts",
@@ -161,42 +161,16 @@
   },
   {
    "type": "ring",
-   "at": 17.470000000000002,
-   "until": 24.37,
+   "at": 12.88,
+   "until": 17.8,
    "i": 14,
    "p": 71,
    "color": "blue"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.8,
+   0.5,
    4.37,
    "Nicht jedes *Equal High* zählt",
    {
@@ -205,47 +179,47 @@
   ],
   [
    4.37,
-   8.37,
+   6.9,
    "Schon *abgeholt*",
    {
     "voice": "Hier wurden die Hochs schon abgeholt."
    }
   ],
   [
-   8.37,
-   12.37,
+   6.9,
+   9.27,
    "Die Stopps sind *weg*",
    {
     "voice": "Die Stopps darüber sind also weg."
    }
   ],
   [
-   12.37,
-   16.37,
+   9.27,
+   12.23,
    "Rechts: ein *tieferes Hoch*",
    {
     "voice": "Hier dagegen liegt rechts ein tieferes Hoch!"
    }
   ],
   [
-   16.37,
-   20.37,
+   12.23,
+   14.58,
    "Noch *unberührt*",
    {
     "voice": "Diese Hochs sind noch unberührt!"
    }
   ],
   [
-   20.37,
-   24.37,
+   14.58,
+   17.8,
    "*Faustregel*: selbst prüfen",
    {
     "voice": "Das ist eine Faustregel. Prüf es immer selbst!"
    }
   ],
   [
-   24.37,
-   30.37,
+   17.8,
+   21.94,
    "Welches *Thema* soll als Nächstes kommen?",
    {
     "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"

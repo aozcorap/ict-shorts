@@ -103,44 +103,44 @@
   [
    0,
    5,
-   0.32,
-   0.5
+   3.52,
+   0.91
   ],
   [
    6,
    8,
-   6.84,
-   0.8
+   10.18,
+   0.54
   ],
   [
    9,
    9,
-   10.74,
-   0
+   12.9,
+   0.0
   ],
   [
    10,
    10,
-   11.74,
-   0
+   13.75,
+   0.0
   ],
   [
    11,
    11,
-   14.54,
-   0
+   16.13,
+   0.0
   ],
   [
    12,
    14,
-   15.84,
-   0.8
+   17.15,
+   0.63
   ]
  ],
  "elements": [
   {
    "type": "line",
-   "at": 3.42,
+   "at": 8.75,
    "i0": 1,
    "i1": "end",
    "p": 64,
@@ -149,8 +149,8 @@
   },
   {
    "type": "label",
-   "at": 10.84,
-   "until": 16.34,
+   "at": 12.99,
+   "until": 17.54,
    "i": 9,
    "p": 70,
    "text": "// ausbruch",
@@ -159,16 +159,16 @@
   },
   {
    "type": "ring",
-   "at": 14.64,
-   "until": 20.34,
+   "at": 16.21,
+   "until": 20.35,
    "i": 11,
    "p": 63.8,
    "color": "orange"
   },
   {
    "type": "label",
-   "at": 14.64,
-   "until": 20.34,
+   "at": 16.21,
+   "until": 20.35,
    "i": 10,
    "p": 55.5,
    "text": "// retest",
@@ -177,7 +177,7 @@
   },
   {
    "type": "zone",
-   "at": 18.54,
+   "at": 19.23,
    "i0": 9,
    "i1": "end",
    "p0": 60,
@@ -188,76 +188,50 @@
    "dur": 1.2
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.82,
-   6.34,
+   4.02,
+   9.84,
    "Viele Trader, dieselben *Chartmuster*",
    {
     "voice": "Wie entsteht Liquidität eigentlich? Ganz einfach: Viele Trader nutzen dieselben Chartmuster!"
    }
   ],
   [
-   6.34,
-   10.34,
+   9.84,
+   12.56,
    "Widerstand mehrfach *getestet*",
    {
     "voice": "Ein Widerstand wird mehrfach getestet."
    }
   ],
   [
-   10.34,
-   14.34,
+   12.56,
+   15.97,
    "*Ausbruch*: viele steigen ein",
    {
     "voice": "Dann kommt der Ausbruch, und viele steigen ein!"
    }
   ],
   [
-   14.34,
-   18.34,
+   15.97,
+   19.11,
    "Manche warten auf den *Retest*",
    {
     "voice": "Manche warten auf den Retest und kaufen dort."
    }
   ],
   [
-   18.34,
-   22.34,
+   19.11,
+   21.59,
    "Alle Stopps liegen *darunter*",
    {
     "voice": "Und ihre Stopps liegen alle darunter!"
    }
   ],
   [
-   22.34,
-   26.34,
+   21.59,
+   24.75,
    "Gleiche Muster: *Liquidität*",
    {
     "voice": "So entsteht Liquidität durch gleiche Muster."
@@ -266,7 +240,7 @@
  ],
  "intro": {
   "a": 0.1,
-  "b": 3.82,
+  "b": 4.02,
   "voice": "Wie Liquidität entsteht! Retail-Muster und FOMO.",
   "title": "Wie Liquidität entsteht",
   "sub": "retail-muster und fomo",

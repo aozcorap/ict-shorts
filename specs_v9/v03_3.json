@@ -97,35 +97,35 @@
   [
    0,
    8,
-   0.3,
-   0.4
+   0.0,
+   0.55
   ],
   [
    9,
    11,
-   9.09,
-   0.6
+   8.29,
+   0.39
   ],
   [
    12,
    13,
-   17.09,
-   0.7
+   13.84,
+   0.52
   ]
  ],
  "elements": [
   {
    "type": "ring",
-   "at": 3.4,
-   "until": 10.89,
+   "at": 4.07,
+   "until": 9.46,
    "i": 8,
    "p": 70,
    "color": "blue"
   },
   {
    "type": "label",
-   "at": 3.4,
-   "until": 10.89,
+   "at": 4.07,
+   "until": 9.46,
    "i": 8,
    "p": 73,
    "text": "// short-einstieg",
@@ -134,7 +134,7 @@
   },
   {
    "type": "line",
-   "at": 12.49,
+   "at": 10.5,
    "i0": 3,
    "i1": "end",
    "p": 51,
@@ -142,7 +142,7 @@
   },
   {
    "type": "zone",
-   "at": 13.09,
+   "at": 10.91,
    "i0": 3,
    "i1": "end",
    "p0": 47,
@@ -154,16 +154,16 @@
   },
   {
    "type": "ring",
-   "at": 17.09,
-   "until": 24.89,
+   "at": 13.84,
+   "until": 20.05,
    "i": 12,
    "p": 47,
    "color": "green"
   },
   {
    "type": "label",
-   "at": 17.09,
-   "until": 24.89,
+   "at": 13.84,
+   "until": 20.05,
    "i": 13,
    "p": 43.2,
    "text": "// gewinn mitnehmen",
@@ -171,35 +171,9 @@
    "anchor": "end"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.8,
+   0.5,
    4.89,
    "Große Orders brauchen eine *Gegenseite*",
    {
@@ -208,47 +182,47 @@
   ],
   [
    4.89,
-   8.89,
+   8.16,
    "Short-Händler: *Gewinn* mitnehmen",
    {
     "voice": "Ein Short-Händler will später seinen Gewinn mitnehmen."
    }
   ],
   [
-   8.89,
-   12.89,
+   8.16,
+   10.76,
    "Jemand muss *verkaufen*",
    {
     "voice": "Dafür muss ihm jemand etwas verkaufen."
    }
   ],
   [
-   12.89,
-   16.89,
+   10.76,
+   13.69,
    "Das liefern: Stopps der *Käufer*",
    {
     "voice": "Genau das liefern die Stopps der Käufer!"
    }
   ],
   [
-   16.89,
-   20.89,
+   13.69,
+   16.66,
    "*Order Pairing*",
    {
     "voice": "Dieses Zusammenführen heißt Order Pairing."
    }
   ],
   [
-   20.89,
-   24.89,
+   16.66,
+   20.05,
    "Kein *bewiesener* Ablauf",
    {
     "voice": "Ob es immer genau so abläuft, weiß niemand sicher."
    }
   ],
   [
-   24.89,
-   30.89,
+   20.05,
+   24.07,
    "Welches *Thema* soll als Nächstes kommen?",
    {
     "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"

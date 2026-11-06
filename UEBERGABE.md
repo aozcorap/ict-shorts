@@ -76,7 +76,8 @@ Der Nutzer will **vollautomatisch, ohne Aufwand** (später z. B. 40 Videos). Erg
 - Bekannte Bildschwächen aus der README (Beschriftungen über Kerzen) teils offen.
 
 ## Sitzung 2: Pilot-Fassung v9 (Piper, kostenlos)
-- Plan: 6 Videos, 2 Wochen, 3 Posts/Woche (Mo/Mi/Fr), von Hand posten. A/B: `videos_v9/v01,v03,v05` mit Piper-Stimme (Thorsten) + Musik, `v02,v04,v06` ohne Sprecher (nur Untertitel + Musik).
+- Aenderung nach Rueckmeldung: v06 gestrichen, stumme A/B-Fassungen gestrichen. `videos_v9/v01-v05` alle mit Piper-Stimme (Thorsten) + Musik. Fehler behoben: Bei Teilen mit Titelkarte ueberlappte der Titel-Sprechtext mit der ersten Zeile (zwei Stimmen); jetzt per `build_v3.py retime` (Specs aus specs_v8, Zeiten in `specs_v9/`) ohne Ueberlappung.
+- Urspruenglicher Plan: Pilot mit Posts von Hand, 3 pro Woche.
 - Texte: v01 aus `specs_v7`, v02-v06 aus `specs_v8` (Zeiten per `fit_windows.py` an Piper angepasst -> `specs_v9/`). Bau: `finish_v9.py` (Teile zusammenfuegen, Ton ueber die Gesamtlaenge, Musik). Die Mischung von "Fassung 3" war nicht als Skript vorhanden; Werte in `finish_v9.py` sind rekonstruiert (Sprecher -16 LUFS, Musik -38 LUFS, abgesenkt beim Sprechen; stumm: Musik -24 LUFS).
 - Nicht gehoert vom Assistenten: nur Lautstaerke und Bild geprueft. Aussprache englischer Begriffe (Lautschrift) ungeprueft.
 - Kein ElevenLabs/Klon eingerichtet. Kein Host/Zugang ausser pip/npm/huggingface (Piper-Modell) genutzt.

@@ -115,20 +115,20 @@
   [
    0,
    11,
-   0.3,
-   0.3
+   0.0,
+   0.36
   ],
   [
    12,
    12,
-   8.85,
-   0
+   7.17,
+   0.0
   ],
   [
    13,
    16,
-   12.549999999999999,
-   0.8
+   10.01,
+   0.62
   ]
  ],
  "elements": [
@@ -143,7 +143,7 @@
   },
   {
    "type": "zone",
-   "at": 4.75,
+   "at": 4.59,
    "i0": 3,
    "i1": "end",
    "p0": 66,
@@ -154,42 +154,16 @@
   },
   {
    "type": "ring",
-   "at": 8.85,
-   "until": 14.35,
+   "at": 7.17,
+   "until": 11.41,
    "i": 12,
    "p": 70,
    "color": "blue"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.8,
+   0.5,
    4.35,
    "Preis läuft über ein *altes Hoch*",
    {
@@ -198,39 +172,39 @@
   ],
   [
    4.35,
-   8.35,
+   6.78,
    "Dort: Stopps der *Verkäufer*",
    {
     "voice": "Dort liegen die Stopps der Verkäufer."
    }
   ],
   [
-   8.35,
-   12.35,
+   6.78,
+   9.86,
    "Sie lösen aus: *Kauforders*",
    {
     "voice": "Sie lösen aus und werden zu Kauforders!"
    }
   ],
   [
-   12.35,
-   16.35,
+   9.86,
+   12.96,
    "Danach fällt der Preis oft *zurück*",
    {
     "voice": "Und danach fällt der Preis oft wieder zurück."
    }
   ],
   [
-   16.35,
-   20.35,
+   12.96,
+   16.03,
    "*Stop Hunt*: Jagd auf Stopps",
    {
     "voice": "Das nennt man Stop Hunt, die Jagd auf Stopps!"
    }
   ],
   [
-   20.35,
-   24.35,
+   16.03,
+   19.84,
    "Ob *Raid*: erst hinterher",
    {
     "voice": "Ob es ein Liquidity Raid war, siehst du erst hinterher."

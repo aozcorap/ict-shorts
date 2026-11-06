@@ -109,44 +109,44 @@
   [
    0,
    5,
-   0.3,
-   0.6
+   3.3,
+   1.1
   ],
   [
    6,
    7,
-   6.790000000000001,
-   0.8
+   10.04,
+   0.71
   ],
   [
    8,
    9,
-   10.59,
-   0.6
+   13.39,
+   0.5
   ],
   [
    10,
    11,
-   12.39,
-   0.6
+   14.9,
+   0.5
   ],
   [
    12,
    13,
-   14.690000000000001,
-   0.7
+   16.77,
+   0.45
   ],
   [
    14,
    15,
-   18.69,
-   0.7
+   19.38,
+   0.52
   ]
  ],
  "elements": [
   {
    "type": "zone",
-   "at": 1.0,
+   "at": 4.17,
    "i0": 0,
    "i1": 5,
    "p0": 57,
@@ -157,8 +157,8 @@
   },
   {
    "type": "label",
-   "at": 7.1899999999999995,
-   "until": 14.39,
+   "at": 10.4,
+   "until": 16.58,
    "i": 7,
    "p": 70,
    "text": "IMPULS",
@@ -167,7 +167,7 @@
   },
   {
    "type": "zone",
-   "at": 10.89,
+   "at": 13.64,
    "i0": 0,
    "i1": "end",
    "p0": 53.5,
@@ -179,8 +179,8 @@
   },
   {
    "type": "label",
-   "at": 14.790000000000001,
-   "until": 22.39,
+   "at": 16.84,
+   "until": 22.13,
    "i": 12,
    "p": 74.5,
    "text": "UMKEHR",
@@ -189,91 +189,65 @@
   },
   {
    "type": "ring",
-   "at": 18.69,
-   "until": 26.39,
+   "at": 19.38,
+   "until": 26.04,
    "i": 14,
    "p": 53.5,
    "color": "green"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.8,
-   6.39,
+   3.8,
+   9.69,
    "1: Der Preis pendelt in einer *Range*.",
    {
     "voice": "Fünf Schritte, und du erkennst Liquidität im Chart! Schritt eins: Der Preis pendelt in einer Range."
    }
   ],
   [
-   6.39,
-   10.39,
+   9.69,
+   13.22,
    "2: Ein *Impuls* bricht nach oben aus.",
    {
     "voice": "Schritt zwei: Ein Impuls bricht nach oben aus!"
    }
   ],
   [
-   10.39,
-   14.39,
+   13.22,
+   16.58,
    "3: Unter den Tiefs sammeln sich *Stopps*.",
    {
     "voice": "Schritt drei: Unter den Tiefs sammeln sich Stopps."
    }
   ],
   [
-   14.39,
-   18.39,
+   16.58,
+   19.16,
    "4: Der Preis *kehrt* um.",
    {
     "voice": "Schritt vier: Der Preis kehrt um!"
    }
   ],
   [
-   18.39,
-   22.39,
+   19.16,
+   22.13,
    "5: Er läuft zu den *Stopps* zurück.",
    {
     "voice": "Und Schritt fünf: Er läuft zu den Stopps zurück!"
    }
   ],
   [
-   22.39,
-   26.39,
+   22.13,
+   26.04,
    "Keine *Garantie*, aber ein Rahmen",
    {
     "voice": "Eine Garantie ist das nicht, aber ein guter Rahmen zum Beobachten."
    }
   ],
   [
-   26.39,
-   32.39,
+   26.04,
+   30.25,
    "Welches *Thema* soll als Nächstes kommen?",
    {
     "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"

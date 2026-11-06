@@ -109,27 +109,27 @@
   [
    0,
    9,
-   0.31,
-   0.4
+   3.51,
+   0.55
   ],
   [
    10,
    13,
-   5.13,
-   0.95
+   8.6,
+   0.8
   ],
   [
    14,
    15,
-   9.43,
-   0.7
+   12.18,
+   0.54
   ]
  ],
  "elements": [
   {
    "type": "ring",
-   "at": 1.21,
-   "until": 5.93,
+   "at": 4.56,
+   "until": 9.27,
    "i": 3,
    "p": 53,
    "color": "green",
@@ -137,8 +137,8 @@
   },
   {
    "type": "label",
-   "at": 1.21,
-   "until": 5.93,
+   "at": 4.56,
+   "until": 9.27,
    "i": 3,
    "p": 60,
    "text": "// einstieg",
@@ -146,7 +146,7 @@
   },
   {
    "type": "line",
-   "at": 2.21,
+   "at": 5.94,
    "i0": 3,
    "i1": "end",
    "p": 51,
@@ -156,16 +156,16 @@
   },
   {
    "type": "ring",
-   "at": 7.13,
-   "until": 12.93,
+   "at": 10.28,
+   "until": 14.9,
    "i": 12,
    "p": 51,
    "color": "orange"
   },
   {
    "type": "label",
-   "at": 9.43,
-   "until": 20.930000000000003,
+   "at": 12.18,
+   "until": 22.18,
    "i": 13,
    "p": 43,
    "text": "// marktorder: sofort",
@@ -174,7 +174,7 @@
   },
   {
    "type": "line",
-   "at": 17.130000000000003,
+   "at": 18.32,
    "i0": 10,
    "i1": "end",
    "p": 57,
@@ -182,76 +182,50 @@
    "label": "LIMIT: wartet auf Preis"
   }
  ],
- "_old": [
-  [
-   0.8,
-   4
-  ],
-  [
-   4,
-   8
-  ],
-  [
-   8,
-   12
-  ],
-  [
-   12,
-   16
-  ],
-  [
-   16,
-   20
-  ],
-  [
-   20,
-   24
-  ]
- ],
  "caps": [
   [
-   0.81,
-   4.93,
+   4.01,
+   8.43,
    "Ein Stopp ist erst mal nur eine *Wartestellung*.",
    {
     "voice": "Was passiert eigentlich mit einem Stopp? Erst mal gar nichts: Er wartet nur."
    }
   ],
   [
-   4.93,
-   8.93,
+   8.43,
+   11.79,
    "Preis erreicht ihn: *Marktorder*",
    {
     "voice": "Erreicht der Preis ihn, wird er zur Marktorder!"
    }
   ],
   [
-   8.93,
-   12.93,
+   11.79,
+   14.9,
    "Marktorder: *sofort*",
    {
     "voice": "Und eine Marktorder wird sofort ausgeführt."
    }
   ],
   [
-   12.93,
-   16.93,
+   14.9,
+   18.12,
    "Zum nächsten *verfügbaren* Preis",
    {
     "voice": "Zum nächsten Preis, der gerade verfügbar ist."
    }
   ],
   [
-   16.93,
-   20.93,
+   18.12,
+   22.18,
    "*Limit-Order*: wartet",
    {
     "voice": "Eine Limit-Order macht das anders: Sie wartet auf ihren Preis."
    }
   ],
   [
-   20.93,
-   24.93,
+   22.18,
+   25.24,
    "Stopps bringen *plötzlich* Handel",
    {
     "voice": "Darum bringen Stopps plötzlich Handel in den Markt!"
@@ -260,7 +234,7 @@
  ],
  "intro": {
   "a": 0.1,
-  "b": 3.81,
+  "b": 4.01,
   "voice": "Stopps im Markt! Marktorder, Raid und Order Pairing.",
   "title": "Stopps im Markt",
   "sub": "marktorder, raid, order pairing",
