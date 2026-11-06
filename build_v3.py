@@ -9,6 +9,7 @@ Quelle der Fakten: die Zeilen in specs/liqNN.json; nichts Neues behauptet, nur v
 """
 import copy, json, subprocess, sys, wave
 from pathlib import Path
+import os
 
 ROOT = Path(__file__).resolve().parent
 PAUSE = 0.45   # Atempause nach jeder Zeile
@@ -132,23 +133,23 @@ def dur(p):
 
 
 def retime_stage():
-    out = ROOT / "specs_v3f"
+    out = ROOT / os.environ.get("OUT_SPECS", "specs_v3f")
     out.mkdir(exist_ok=True)
-    for f in sorted((ROOT / "specs_v3").glob("v0[2-6]_*.json")):
+    for f in sorted((ROOT / os.environ.get("IN_SPECS", "specs_v3")).glob("v0[2-6]_*.json")):
         s = json.load(open(f, encoding="utf8"))
         slug = f.stem
         n = 0
         t = 0.5
         if "intro" in s:
             n = 1
-            d = dur(ROOT / "audio_v3" / f"{slug}_1.wav")
+            d = dur(ROOT / os.environ.get("AUDIO", "audio_v3") / f"{slug}_1.wav")
             s["intro"]["b"] = round(max(3.8, 0.1 + LEAD + d + 0.35), 2)
             t = s["intro"]["b"]
         old = s.pop("_old")
         newwin = []
         for k, c in enumerate(s["caps"]):
             n += 1
-            L = LEAD + dur(ROOT / "audio_v3" / f"{slug}_{n}.wav") + PAUSE
+            L = LEAD + dur(ROOT / os.environ.get("AUDIO", "audio_v3") / f"{slug}_{n}.wav") + PAUSE
             newwin.append((round(t, 2), round(t + L, 2)))
             c[0], c[1] = newwin[-1]
             t += L
@@ -178,13 +179,13 @@ def retime_stage():
 
 
 def concat():
-    (ROOT / "videos_v3").mkdir(exist_ok=True)
+    (ROOT / os.environ.get("OUT_VIDEOS", "videos_v3")).mkdir(exist_ok=True)
     for vid, v in V.items():
-        parts = [ROOT / "videos_teile_v3" / f"{vid}_{k}.mp4" for k in range(1, len(v["parts"]) + 1)]
-        lst = ROOT / "videos_teile_v3" / f"_{vid}.txt"
+        parts = [ROOT / os.environ.get("PARTS_DIR", "videos_teile_v3") / f"{vid}_{k}.mp4" for k in range(1, len(v["parts"]) + 1)]
+        lst = ROOT / os.environ.get("PARTS_DIR", "videos_teile_v3") / f"_{vid}.txt"
         lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy",
-                        str(ROOT / "videos_v3" / f"{vid}.mp4")], check=True)
+                        str(ROOT / os.environ.get("OUT_VIDEOS", "videos_v3") / f"{vid}{os.environ.get('SUFFIX', '')}.mp4")], check=True)
         lst.unlink()
         print(vid, "fertig")
 
