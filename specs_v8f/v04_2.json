@@ -1,0 +1,228 @@
+{
+ "slug": "liquiditaet07",
+ "ep": "liquidität_07",
+ "tag": "LIQUIDITÄT 07",
+ "title": "FOMO-Impuls",
+ "sub": "wenn alle hinterherrennen",
+ "pmin": 50,
+ "pmax": 78,
+ "candles": [
+  [
+   56,
+   57,
+   58,
+   55
+  ],
+  [
+   57,
+   56,
+   58,
+   55
+  ],
+  [
+   56,
+   57,
+   58,
+   55.5
+  ],
+  [
+   57,
+   56.5,
+   58,
+   56
+  ],
+  [
+   56.5,
+   64,
+   65,
+   56
+  ],
+  [
+   64,
+   69,
+   70,
+   63.5
+  ],
+  [
+   69,
+   73,
+   74,
+   68.5
+  ],
+  [
+   73,
+   71,
+   74,
+   70
+  ],
+  [
+   71,
+   72.5,
+   73.5,
+   70.5
+  ],
+  [
+   72.5,
+   70,
+   73,
+   69.5
+  ],
+  [
+   70,
+   66,
+   71,
+   65
+  ],
+  [
+   66,
+   62,
+   67,
+   61
+  ],
+  [
+   62,
+   58,
+   63,
+   57
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   3,
+   0.0,
+   0.53
+  ],
+  [
+   4,
+   6,
+   6.45,
+   0.61
+  ],
+  [
+   7,
+   9,
+   15.86,
+   0.53
+  ],
+  [
+   10,
+   12,
+   21.25,
+   1.11
+  ]
+ ],
+ "elements": [
+  {
+   "type": "label",
+   "at": 7.06,
+   "until": 15.65,
+   "i": 4,
+   "p": 61,
+   "text": "// impuls",
+   "color": "green",
+   "anchor": "end"
+  },
+  {
+   "type": "ring",
+   "at": 10.43,
+   "until": 17.75,
+   "i": 6,
+   "p": 74,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 10.43,
+   "until": 17.75,
+   "i": 6,
+   "p": 77,
+   "text": "FOMO: hinterher!",
+   "color": "orange",
+   "anchor": "end"
+  },
+  {
+   "type": "zone",
+   "at": 17.33,
+   "i0": 7,
+   "i1": "end",
+   "p0": 67.5,
+   "p1": 70,
+   "color": "orange",
+   "label": "STOPPS DER NACHZÜGLER",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 22.37,
+   "until": 29.04,
+   "i": 11,
+   "p": 62,
+   "color": "orange"
+  }
+ ],
+ "caps": [
+  [
+   0.5,
+   6.19,
+   "Große *Kerzen* in eine Richtung",
+   {
+    "voice": "Noch ein Klassiker: Plötzlich laufen große Kerzen in eine Richtung!"
+   }
+  ],
+  [
+   6.19,
+   9.68,
+   "Da muss ich *dabei* sein!",
+   {
+    "voice": "Und viele denken: Da muss ich dabei sein!"
+   }
+  ],
+  [
+   9.68,
+   15.65,
+   "*FOMO*: Angst, etwas zu verpassen",
+   {
+    "voice": "Das nennt man FOMO, die Angst, etwas zu verpassen."
+   }
+  ],
+  [
+   15.65,
+   19.86,
+   "Spät rein, Stopps *nah*",
+   {
+    "voice": "Sie steigen spät ein, und ihre Stopps liegen ganz nah."
+   }
+  ],
+  [
+   19.86,
+   25.43,
+   "Liquidität unter dem *Rücksetzer*",
+   {
+    "voice": "So sammelt sich Liquidität unter dem Rücksetzer!"
+   }
+  ],
+  [
+   25.43,
+   29.04,
+   "Ein Impuls ist oft ein *Köder*",
+   {
+    "voice": "Darum ist ein schneller Impuls oft ein Köder!"
+   }
+  ],
+  [
+   29.04,
+   33.49,
+   "Welches *Thema* soll als Nächstes kommen?",
+   {
+    "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"
+   }
+  ]
+ ],
+ "next": {
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ }
+}

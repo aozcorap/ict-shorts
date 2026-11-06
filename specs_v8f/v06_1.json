@@ -1,0 +1,216 @@
+{
+ "slug": "liquiditaet12",
+ "ep": "liquidität_12",
+ "tag": "LIQUIDITÄT 12",
+ "title": "Stop-Loss",
+ "sub": "warum trotzdem einen setzen?",
+ "pmin": 44,
+ "pmax": 68,
+ "candles": [
+  [
+   58,
+   60,
+   61,
+   57
+  ],
+  [
+   60,
+   62,
+   63,
+   59
+  ],
+  [
+   62,
+   61,
+   63,
+   59.5
+  ],
+  [
+   61,
+   60,
+   62,
+   59
+  ],
+  [
+   60,
+   57.5,
+   60.5,
+   56.5
+  ],
+  [
+   57.5,
+   54,
+   58,
+   53
+  ],
+  [
+   54,
+   50,
+   55,
+   49
+  ],
+  [
+   50,
+   48,
+   51,
+   47
+  ],
+  [
+   48,
+   52,
+   53,
+   47.5
+  ],
+  [
+   52,
+   57,
+   58,
+   51.5
+  ],
+  [
+   57,
+   62,
+   63,
+   56.5
+  ],
+  [
+   62,
+   66,
+   67,
+   61.5
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   3,
+   5.99,
+   0.71
+  ],
+  [
+   4,
+   8,
+   15.29,
+   0.78
+  ],
+  [
+   9,
+   11,
+   27.71,
+   0.77
+  ]
+ ],
+ "elements": [
+  {
+   "type": "ring",
+   "at": 11.02,
+   "until": 20.24,
+   "i": 1,
+   "p": 60,
+   "color": "green",
+   "r": 26
+  },
+  {
+   "type": "label",
+   "at": 11.02,
+   "until": 20.24,
+   "i": 1,
+   "p": 64,
+   "text": "// kauf",
+   "color": "green"
+  },
+  {
+   "type": "line",
+   "at": 15.03,
+   "i0": 1,
+   "i1": "end",
+   "p": 57,
+   "color": "orange",
+   "label": "STOPP",
+   "labelBelow": true
+  },
+  {
+   "type": "zone",
+   "at": 15.68,
+   "i0": 1,
+   "i1": 4,
+   "p0": 57,
+   "p1": 60,
+   "color": "orange",
+   "label": "RISIKO MIT STOPP",
+   "dur": 1.0
+  },
+  {
+   "type": "zone",
+   "at": 20.77,
+   "i0": 4,
+   "i1": 8,
+   "p0": 47,
+   "p1": 57,
+   "color": "ink",
+   "label": "OHNE STOPP: WEITER BIS HIER",
+   "labelBelow": true,
+   "dur": 1.2
+  }
+ ],
+ "caps": [
+  [
+   6.49,
+   11.02,
+   "Niemand kennt *alles*",
+   {
+    "voice": "Und trotzdem gilt: Auch wer das Konzept kennt, kennt nicht alles."
+   }
+  ],
+  [
+   11.02,
+   15.03,
+   "Niemand weiß, wohin der Preis *wirklich* läuft",
+   {
+    "voice": "Niemand weiß, wohin der Preis wirklich läuft."
+   }
+  ],
+  [
+   15.03,
+   20.24,
+   "*Stop-Loss* begrenzt den Verlust",
+   {
+    "voice": "Ein Stop-Loss begrenzt, was du verlieren kannst!"
+   }
+  ],
+  [
+   20.24,
+   27.33,
+   "Ohne Stopp: Fehler wird *teuer*",
+   {
+    "voice": "Ohne Stopp kann ein einziger Fehler teuer werden."
+   }
+  ],
+  [
+   27.33,
+   32.46,
+   "Dort, wo die Idee *ungültig* ist",
+   {
+    "voice": "Lege ihn dorthin, wo deine Idee ungültig ist."
+   }
+  ],
+  [
+   32.46,
+   35.63,
+   "*Risiko* zuerst, dann die Chance",
+   {
+    "voice": "Risiko zuerst, dann die Chance!"
+   }
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 6.49,
+  "voice": "Risiko und Übung! Stop-Loss und zehn Tage Training.",
+  "title": "Risiko und Übung",
+  "sub": "stop-loss und zehn tage training",
+  "tag": "LIQUIDITÄT"
+ },
+ "noOutro": true
+}
