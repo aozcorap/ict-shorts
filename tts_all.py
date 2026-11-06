@@ -73,7 +73,7 @@ def clone_all(a, slugs, AUD):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--engine", choices=["piper", "clone"], default="piper")
+    ap.add_argument("--engine", choices=["piper", "clone", "recorded"], default="piper")
     ap.add_argument("--model")
     ap.add_argument("--ref")
     ap.add_argument("--clone-python")
@@ -89,6 +89,8 @@ def main():
     AUD, OUT = ROOT / a.audio_dir, ROOT / a.out_dir
     AUD.mkdir(exist_ok=True)
     OUT.mkdir(exist_ok=True)
+    if a.engine == "recorded":
+        pass  # WAVs liegen bereits im audio-dir (eigene Aufnahmen), nichts synthetisieren
     if a.engine == "piper" and not a.model:
         ap.error("--model fehlt (Piper)")
     if a.engine == "clone":
