@@ -81,3 +81,10 @@ Der Nutzer will **vollautomatisch, ohne Aufwand** (später z. B. 40 Videos). Erg
 - Texte: v01 aus `specs_v7`, v02-v06 aus `specs_v8` (Zeiten per `fit_windows.py` an Piper angepasst -> `specs_v9/`). Bau: `finish_v9.py` (Teile zusammenfuegen, Ton ueber die Gesamtlaenge, Musik). Die Mischung von "Fassung 3" war nicht als Skript vorhanden; Werte in `finish_v9.py` sind rekonstruiert (Sprecher -16 LUFS, Musik -38 LUFS, abgesenkt beim Sprechen; stumm: Musik -24 LUFS).
 - Nicht gehoert vom Assistenten: nur Lautstaerke und Bild geprueft. Aussprache englischer Begriffe (Lautschrift) ungeprueft.
 - Kein ElevenLabs/Klon eingerichtet. Kein Host/Zugang ausser pip/npm/huggingface (Piper-Modell) genutzt.
+
+## Sitzung 2, Stand v11 (aktuell): ElevenLabs-Klon der eigenen Stimme
+- `videos_v11/v01-v05`: Stimme = ElevenLabs Instant Voice Clone des Nutzers (Stimmen-ID im Chat gegeben, kein Geheimnis; Modell `eleven_multilingual_v2`, Stabilitaet 0.5, Aehnlichkeit 0.75, Stil 0), Musik darunter. Specs: `specs_v11/`. Kommentar-Aufruf am Ende bei jedem Video gesprochen.
+- Erzeugung: Zeilen per ElevenLabs-API (Skript lag nur lokal, `gen_el.py`: POST /v1/text-to-speech/<ID>, Header xi-api-key; Key NIE ins Repo), Zeiten `build_v3.py retime` (jetzt inkl. v01), Zusammenbau `finish_v9.py`.
+- Gratis-Konto war ueber die Schnittstelle wegen Proxy-Erkennung gesperrt; nach Bezahlplan ging es von der Cloud-Sitzung aus.
+- v06 gestrichen. Chatterbox-Klon verworfen (klang hallig). `dereverb.py` vorhanden, falls noetig.
+- Der verwendete API-Key stand im Chatverlauf: bei ElevenLabs loeschen und neuen erzeugen.

@@ -1,0 +1,244 @@
+{
+ "slug": "liquiditaet04",
+ "ep": "liquidität_04",
+ "tag": "LIQUIDITÄT 04",
+ "title": "Marktorder",
+ "sub": "warum ein stopp sofort greift",
+ "pmin": 42,
+ "pmax": 64,
+ "candles": [
+  [
+   50,
+   52,
+   53,
+   49
+  ],
+  [
+   52,
+   54,
+   55,
+   51
+  ],
+  [
+   54,
+   53,
+   55,
+   52
+  ],
+  [
+   53,
+   56,
+   57,
+   52.5
+  ],
+  [
+   56,
+   58,
+   59,
+   55.5
+  ],
+  [
+   58,
+   57,
+   59,
+   56
+  ],
+  [
+   57,
+   60,
+   61,
+   56.5
+  ],
+  [
+   60,
+   62,
+   63,
+   59.5
+  ],
+  [
+   62,
+   61,
+   63,
+   60
+  ],
+  [
+   61,
+   59,
+   62,
+   58.5
+  ],
+  [
+   59,
+   56,
+   60,
+   55
+  ],
+  [
+   56,
+   53,
+   57,
+   52
+  ],
+  [
+   53,
+   50,
+   54,
+   49
+  ],
+  [
+   50,
+   46,
+   51,
+   45
+  ],
+  [
+   46,
+   47,
+   48,
+   44.5
+  ],
+  [
+   47,
+   50,
+   51,
+   46.5
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   9,
+   3.3,
+   0.55
+  ],
+  [
+   10,
+   13,
+   8.37,
+   0.74
+  ],
+  [
+   14,
+   15,
+   11.69,
+   0.52
+  ]
+ ],
+ "elements": [
+  {
+   "type": "ring",
+   "at": 4.35,
+   "until": 8.99,
+   "i": 3,
+   "p": 53,
+   "color": "green",
+   "r": 26
+  },
+  {
+   "type": "label",
+   "at": 4.35,
+   "until": 8.99,
+   "i": 3,
+   "p": 60,
+   "text": "// einstieg",
+   "color": "green"
+  },
+  {
+   "type": "line",
+   "at": 5.73,
+   "i0": 3,
+   "i1": "end",
+   "p": 51,
+   "color": "orange",
+   "label": "STOPP",
+   "labelBelow": true
+  },
+  {
+   "type": "ring",
+   "at": 9.92,
+   "until": 14.29,
+   "i": 12,
+   "p": 51,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 11.69,
+   "until": 21.21,
+   "i": 13,
+   "p": 43,
+   "text": "// marktorder: sofort",
+   "color": "orange",
+   "anchor": "end"
+  },
+  {
+   "type": "line",
+   "at": 17.6,
+   "i0": 10,
+   "i1": "end",
+   "p": 57,
+   "color": "blue",
+   "label": "LIMIT: wartet auf Preis"
+  }
+ ],
+ "caps": [
+  [
+   3.8,
+   8.21,
+   "Ein Stopp ist erst mal nur eine *Wartestellung*.",
+   {
+    "voice": "Was passiert eigentlich mit einem Stopp? Erst mal gar nichts: Er wartet nur."
+   }
+  ],
+  [
+   8.21,
+   11.32,
+   "Preis erreicht ihn: *Marktorder*",
+   {
+    "voice": "Erreicht der Preis ihn, wird er zur Marktorder!"
+   }
+  ],
+  [
+   11.32,
+   14.29,
+   "Marktorder: *sofort*",
+   {
+    "voice": "Und eine Marktorder wird sofort ausgeführt."
+   }
+  ],
+  [
+   14.29,
+   17.41,
+   "Zum nächsten *verfügbaren* Preis",
+   {
+    "voice": "Zum nächsten Preis, der gerade verfügbar ist."
+   }
+  ],
+  [
+   17.41,
+   21.21,
+   "*Limit-Order*: wartet",
+   {
+    "voice": "Eine Limit-Order macht das anders: Sie wartet auf ihren Preis."
+   }
+  ],
+  [
+   21.21,
+   24.56,
+   "Stopps bringen *plötzlich* Handel",
+   {
+    "voice": "Darum bringen Stopps plötzlich Handel in den Markt!"
+   }
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 3.8,
+  "voice": "Stopps im Markt! Marktorder, Raid und Order Pairing.",
+  "title": "Stopps im Markt",
+  "sub": "marktorder, raid, order pairing",
+  "tag": "LIQUIDITÄT"
+ },
+ "noOutro": true
+}

@@ -135,7 +135,7 @@ def dur(p):
 def retime_stage():
     out = ROOT / os.environ.get("OUT_SPECS", "specs_v3f")
     out.mkdir(exist_ok=True)
-    for f in sorted((ROOT / os.environ.get("IN_SPECS", "specs_v3")).glob("v0[2-6]_*.json")):
+    for f in sorted((ROOT / os.environ.get("IN_SPECS", "specs_v3")).glob("v0[1-6]*.json")):
         s = json.load(open(f, encoding="utf8"))
         slug = f.stem
         n = 0

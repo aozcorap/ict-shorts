@@ -1,0 +1,236 @@
+{
+ "slug": "liquiditaet08",
+ "ep": "liquidität_08",
+ "tag": "LIQUIDITÄT 08",
+ "title": "Order Pairing",
+ "sub": "wer ist die gegenseite?",
+ "pmin": 42,
+ "pmax": 76,
+ "candles": [
+  [
+   60,
+   62,
+   63,
+   59
+  ],
+  [
+   62,
+   60,
+   63,
+   59.5
+  ],
+  [
+   60,
+   56,
+   61,
+   55
+  ],
+  [
+   56,
+   52,
+   57,
+   51
+  ],
+  [
+   52,
+   56,
+   57,
+   51.5
+  ],
+  [
+   56,
+   60,
+   61,
+   55.5
+  ],
+  [
+   60,
+   64,
+   65,
+   59.5
+  ],
+  [
+   64,
+   68,
+   69,
+   63.5
+  ],
+  [
+   68,
+   67,
+   70,
+   66
+  ],
+  [
+   67,
+   63,
+   68,
+   62
+  ],
+  [
+   63,
+   57,
+   64,
+   56
+  ],
+  [
+   57,
+   52,
+   58,
+   51
+  ],
+  [
+   52,
+   48,
+   53,
+   46
+  ],
+  [
+   48,
+   50,
+   51,
+   47
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   8,
+   0.0,
+   0.53
+  ],
+  [
+   9,
+   11,
+   8.36,
+   0.46
+  ],
+  [
+   12,
+   13,
+   14.13,
+   0.54
+  ]
+ ],
+ "elements": [
+  {
+   "type": "ring",
+   "at": 3.97,
+   "until": 9.74,
+   "i": 8,
+   "p": 70,
+   "color": "blue"
+  },
+  {
+   "type": "label",
+   "at": 3.97,
+   "until": 9.74,
+   "i": 8,
+   "p": 73,
+   "text": "// short-einstieg",
+   "color": "blue",
+   "anchor": "end"
+  },
+  {
+   "type": "line",
+   "at": 10.96,
+   "i0": 3,
+   "i1": "end",
+   "p": 51,
+   "color": "muted"
+  },
+  {
+   "type": "zone",
+   "at": 11.4,
+   "i0": 3,
+   "i1": "end",
+   "p0": 47,
+   "p1": 51,
+   "color": "orange",
+   "label": "STOPPS DER KÄUFER",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 14.13,
+   "until": 20.61,
+   "i": 12,
+   "p": 47,
+   "color": "green"
+  },
+  {
+   "type": "label",
+   "at": 14.13,
+   "until": 20.61,
+   "i": 13,
+   "p": 43.2,
+   "text": "// gewinn mitnehmen",
+   "color": "green",
+   "anchor": "end"
+  }
+ ],
+ "caps": [
+  [
+   0.5,
+   4.77,
+   "Große Orders brauchen eine *Gegenseite*",
+   {
+    "voice": "Und warum passiert das alles? Große Orders brauchen eine Gegenseite!"
+   }
+  ],
+  [
+   4.77,
+   8.21,
+   "Short-Händler: *Gewinn* mitnehmen",
+   {
+    "voice": "Ein Short-Händler will später seinen Gewinn mitnehmen."
+   }
+  ],
+  [
+   8.21,
+   11.27,
+   "Jemand muss *verkaufen*",
+   {
+    "voice": "Dafür muss ihm jemand etwas verkaufen."
+   }
+  ],
+  [
+   11.27,
+   13.97,
+   "Das liefern: Stopps der *Käufer*",
+   {
+    "voice": "Genau das liefern die Stopps der Käufer!"
+   }
+  ],
+  [
+   13.97,
+   17.08,
+   "*Order Pairing*",
+   {
+    "voice": "Dieses Zusammenführen heißt Order Pairing."
+   }
+  ],
+  [
+   17.08,
+   20.61,
+   "Kein *bewiesener* Ablauf",
+   {
+    "voice": "Ob es immer genau so abläuft, weiß niemand sicher."
+   }
+  ],
+  [
+   20.61,
+   24.83,
+   "Welches *Thema* soll als Nächstes kommen?",
+   {
+    "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"
+   }
+  ]
+ ],
+ "next": {
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ }
+}
