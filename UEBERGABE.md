@@ -1,3 +1,5 @@
+> **AKTUELLER STAND: siehe `STAND_PAUSIERT.md` (Projekt pausiert, 7.11.2026). Der Rest dieser Datei ist die aeltere Chronik und teils ueberholt.**
+
 # Übergabe (Stand: Ende der ersten Sitzung)
 
 ## Ziel
