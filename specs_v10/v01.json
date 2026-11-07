@@ -1,0 +1,358 @@
+{
+ "slug": "liquiditaet01",
+ "ep": "liquidität_01",
+ "tag": "LIQUIDITÄT 01",
+ "title": "Liquidität",
+ "titleSize": 84,
+ "sub": "wo liegen die stops?",
+ "pmin": 40,
+ "pmax": 74,
+ "candles": [
+  [
+   60,
+   62,
+   63,
+   59
+  ],
+  [
+   62,
+   58,
+   63,
+   57
+  ],
+  [
+   58,
+   54,
+   59,
+   53
+  ],
+  [
+   54,
+   51,
+   55,
+   50
+  ],
+  [
+   51,
+   55,
+   56,
+   50.6
+  ],
+  [
+   55,
+   59,
+   60,
+   54
+  ],
+  [
+   59,
+   62,
+   63,
+   58
+  ],
+  [
+   62,
+   60,
+   63,
+   59
+  ],
+  [
+   60,
+   56,
+   61,
+   55
+  ],
+  [
+   56,
+   52,
+   57,
+   51
+  ],
+  [
+   52,
+   51,
+   53,
+   50.4
+  ],
+  [
+   51,
+   56,
+   57,
+   50.8
+  ],
+  [
+   56,
+   61,
+   62,
+   55
+  ],
+  [
+   61,
+   65,
+   66,
+   60
+  ],
+  [
+   65,
+   68,
+   69,
+   64
+  ],
+  [
+   68,
+   66,
+   70,
+   65
+  ],
+  [
+   66,
+   62,
+   67,
+   61
+  ],
+  [
+   62,
+   57,
+   63,
+   56
+  ],
+  [
+   57,
+   52,
+   58,
+   51
+  ],
+  [
+   52,
+   47,
+   53,
+   46
+  ],
+  [
+   47,
+   45,
+   48,
+   44
+  ],
+  [
+   45,
+   52,
+   53,
+   44.5
+  ],
+  [
+   52,
+   59,
+   60,
+   51
+  ],
+  [
+   59,
+   66,
+   67,
+   58
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 4.29,
+  "voice": "Liquidität! Wo liegen die Stopps?",
+  "title": "Liquidität",
+  "sub": "wo liegen die stops?",
+  "tag": "LIQUIDITÄT"
+ },
+ "reveal": [
+  [
+   0,
+   11,
+   4.48,
+   0.33
+  ],
+  [
+   12,
+   15,
+   21.659999999999997,
+   0.52
+  ],
+  [
+   16,
+   20,
+   32.33,
+   1.03
+  ],
+  [
+   21,
+   23,
+   38.870000000000005,
+   0.73
+  ]
+ ],
+ "elements": [
+  {
+   "type": "line",
+   "at": 11.82,
+   "i0": 3,
+   "i1": "end",
+   "p": 50,
+   "color": "muted",
+   "label": "// altes tief",
+   "labelBelow": false
+  },
+  {
+   "type": "zone",
+   "at": 16.11,
+   "i0": 3,
+   "i1": 18,
+   "p0": 46.5,
+   "p1": 50,
+   "color": "orange",
+   "label": "STOP-LOSS DER KÄUFER",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "ring",
+   "at": 35.419999999999995,
+   "until": 43.120000000000005,
+   "i": 19,
+   "p": 46.5,
+   "color": "orange"
+  },
+  {
+   "type": "label",
+   "at": 35.419999999999995,
+   "until": 43.120000000000005,
+   "i": 18,
+   "p": 43,
+   "text": "// stopps ausgelöst",
+   "color": "orange",
+   "anchor": "end"
+  },
+  {
+   "type": "zone",
+   "at": 49.72,
+   "i0": 13,
+   "i1": "end",
+   "p0": 70.4,
+   "p1": 73,
+   "color": "blue",
+   "label": "STOPS DER VERKÄUFER",
+   "labelBelow": false,
+   "dur": 1.0
+  },
+  {
+   "type": "label",
+   "at": 55.300000000000004,
+   "i": 13,
+   "p": 43.6,
+   "text": "SELL-SIDE",
+   "color": "orange",
+   "size": 34,
+   "anchor": "middle"
+  },
+  {
+   "type": "label",
+   "at": 55.300000000000004,
+   "i": 23,
+   "p": 71.2,
+   "text": "BUY-SIDE",
+   "color": "blue",
+   "size": 34,
+   "anchor": "end"
+  }
+ ],
+ "caps": [
+  [
+   4.29,
+   11.61,
+   "Warum läuft der Kurs zu *alten Tiefs*?",
+   {
+    "voice": "Du fragst dich, warum der Kurs manchmal genau zu einem alten Tief läuft? Jetzt zeig ich dir, was dahintersteckt!"
+   }
+  ],
+  [
+   11.61,
+   15.52,
+   "Hier: ein altes *Tief*.",
+   {
+    "voice": "Schau her: Hier! Ein altes Tief."
+   }
+  ],
+  [
+   15.52,
+   20.63,
+   "Darunter warten die *Stop-Loss* der Käufer.",
+   {
+    "voice": "Und genau darunter warten sie: die Stop-Loss-Orders der Käufer!"
+   }
+  ],
+  [
+   20.63,
+   27.26,
+   "Viele Käufer: Stopp *knapp unter* dem Tief.",
+   {
+    "voice": "Viele Käufer setzen ihren Stopp genau dort, knapp unter das Tief."
+   }
+  ],
+  [
+   27.26,
+   31.81,
+   "Viele Stopps an einer Stelle: *Liquidität*.",
+   {
+    "voice": "Viele Stopps an einer Stelle: Das ist Liquidität!"
+   }
+  ],
+  [
+   31.81,
+   37.93,
+   "Preis läuft hinein: Stopps *ausgelöst*.",
+   {
+    "voice": "Und wenn der Preis dort hineinläuft? Bumm! Alle Stopps werden ausgelöst!"
+   }
+  ],
+  [
+   37.93,
+   42.59,
+   "Danach dreht der Kurs *manchmal* kräftig.",
+   {
+    "voice": "Und danach? Da dreht der Kurs manchmal richtig kräftig!"
+   }
+  ],
+  [
+   42.59,
+   48.96,
+   "Liquidität *zieht* den Preis oft an.",
+   {
+    "voice": "Der Markt wird von dieser Liquidität oft regelrecht angezogen. Das ist die Logik dahinter!"
+   }
+  ],
+  [
+   48.96,
+   55.03,
+   "Oben: Stopps der *Verkäufer*.",
+   {
+    "voice": "Und das Ganze gibt es natürlich auch oben: Über alten Hochs liegen die Stopps der Verkäufer!"
+   }
+  ],
+  [
+   55.03,
+   61.9,
+   "Unten *Sell-Side*, oben *Buy-Side*.",
+   {
+    "voice": "Unten die Sell-Side, oben die Buy-Side. Das musst du im Chart sehen können!"
+   }
+  ],
+  [
+   61.9,
+   66.69,
+   "Welches *Thema* soll als Nächstes kommen?",
+   {
+    "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"
+   }
+  ]
+ ],
+ "next": {
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ }
+}
