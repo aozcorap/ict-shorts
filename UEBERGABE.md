@@ -88,3 +88,6 @@ Der Nutzer will **vollautomatisch, ohne Aufwand** (später z. B. 40 Videos). Erg
 - Gratis-Konto war ueber die Schnittstelle wegen Proxy-Erkennung gesperrt; nach Bezahlplan ging es von der Cloud-Sitzung aus.
 - v06 gestrichen. Chatterbox-Klon verworfen (klang hallig). `dereverb.py` vorhanden, falls noetig.
 - Der verwendete API-Key stand im Chatverlauf: bei ElevenLabs loeschen und neuen erzeugen.
+
+## Posting-Set (Pilot, Stand jetzt): `videos_final/`
+v01, v03, v05 mit Stimme (ElevenLabs-Klon, ruhige Musik); v02, v04 ohne Stimme (Untertitel + Musik "drive"). Reihenfolge: v01 bis v05. Posten von Hand (TikTok-API-Antrag nicht weiterverfolgt). Auswertung nach ca. 2 Wochen: Aufrufe, Anteil bis zum Ende, Kommentare.
