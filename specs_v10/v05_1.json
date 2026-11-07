@@ -1,0 +1,269 @@
+{
+ "slug": "liquiditaet09",
+ "ep": "liquidität_09",
+ "tag": "LIQUIDITÄT 09",
+ "title": "Der Ablauf",
+ "sub": "fünf schritte im ict-modell",
+ "pmin": 48,
+ "pmax": 76,
+ "candles": [
+  [
+   58,
+   60,
+   61,
+   57
+  ],
+  [
+   60,
+   58,
+   61,
+   57
+  ],
+  [
+   58,
+   60,
+   61,
+   57.5
+  ],
+  [
+   60,
+   58.5,
+   61,
+   57.5
+  ],
+  [
+   58.5,
+   60,
+   61,
+   58
+  ],
+  [
+   60,
+   59,
+   61,
+   58
+  ],
+  [
+   59,
+   64,
+   65,
+   58.5
+  ],
+  [
+   64,
+   67,
+   68,
+   63.5
+  ],
+  [
+   67,
+   65,
+   68,
+   64.5
+  ],
+  [
+   65,
+   70,
+   71,
+   64.5
+  ],
+  [
+   70,
+   69,
+   71.5,
+   68
+  ],
+  [
+   69,
+   71,
+   72,
+   68.5
+  ],
+  [
+   71,
+   64,
+   72,
+   63
+  ],
+  [
+   64,
+   58,
+   65,
+   57
+  ],
+  [
+   58,
+   54,
+   59,
+   53
+  ],
+  [
+   54,
+   57,
+   58,
+   52.5
+  ]
+ ],
+ "titleSize": 84,
+ "reveal": [
+  [
+   0,
+   5,
+   3.3,
+   1.21
+  ],
+  [
+   6,
+   7,
+   10.6,
+   0.69
+  ],
+  [
+   8,
+   9,
+   13.9,
+   0.59
+  ],
+  [
+   10,
+   11,
+   15.66,
+   0.59
+  ],
+  [
+   12,
+   13,
+   17.86,
+   0.53
+  ],
+  [
+   14,
+   15,
+   20.96,
+   0.74
+  ]
+ ],
+ "elements": [
+  {
+   "type": "zone",
+   "at": 4.2,
+   "i0": 0,
+   "i1": 5,
+   "p0": 57,
+   "p1": 61,
+   "color": "blue",
+   "label": "RANGE",
+   "dur": 1.2
+  },
+  {
+   "type": "label",
+   "at": 10.94,
+   "until": 17.63,
+   "i": 7,
+   "p": 70,
+   "text": "IMPULS",
+   "color": "green",
+   "anchor": "end"
+  },
+  {
+   "type": "zone",
+   "at": 14.19,
+   "i0": 0,
+   "i1": "end",
+   "p0": 53.5,
+   "p1": 57,
+   "color": "orange",
+   "label": "STOPPS ENTSTEHEN",
+   "labelBelow": true,
+   "dur": 1.2
+  },
+  {
+   "type": "label",
+   "at": 17.93,
+   "until": 24.89,
+   "i": 12,
+   "p": 74.5,
+   "text": "UMKEHR",
+   "color": "orange",
+   "anchor": "end"
+  },
+  {
+   "type": "ring",
+   "at": 20.96,
+   "until": 29.3,
+   "i": 14,
+   "p": 53.5,
+   "color": "green"
+  }
+ ],
+ "caps": [
+  [
+   3.8,
+   10.25,
+   "1: Der Preis pendelt in einer *Range*.",
+   {
+    "voice": "Fünf Schritte, und du erkennst Liquidität im Chart! Schritt eins: Der Preis pendelt in einer Range."
+   }
+  ],
+  [
+   10.25,
+   13.7,
+   "2: Ein *Impuls* bricht nach oben aus.",
+   {
+    "voice": "Schritt zwei: Ein Impuls bricht nach oben aus!"
+   }
+  ],
+  [
+   13.7,
+   17.63,
+   "3: Unter den Tiefs sammeln sich *Stopps*.",
+   {
+    "voice": "Schritt drei: Unter den Tiefs sammeln sich Stopps."
+   }
+  ],
+  [
+   17.63,
+   20.64,
+   "4: Der Preis *kehrt* um.",
+   {
+    "voice": "Schritt vier: Der Preis kehrt um!"
+   }
+  ],
+  [
+   20.64,
+   24.89,
+   "5: Er läuft zu den *Stopps* zurück.",
+   {
+    "voice": "Und Schritt fünf: Er läuft zu den Stopps zurück!"
+   }
+  ],
+  [
+   24.89,
+   29.3,
+   "Keine *Garantie*, aber ein Rahmen",
+   {
+    "voice": "Eine Garantie ist das nicht, aber ein guter Rahmen zum Beobachten."
+   }
+  ],
+  [
+   29.3,
+   33.19,
+   "Welches *Thema* soll als Nächstes kommen?",
+   {
+    "voice": "Welches Thema soll als Nächstes kommen? Schreib es mir in die Kommentare!"
+   }
+  ]
+ ],
+ "intro": {
+  "a": 0.1,
+  "b": 3.8,
+  "voice": "Der Ablauf! Fünf Schritte, die du kennen solltest.",
+  "title": "Der Ablauf",
+  "sub": "fünf schritte, ein ablauf",
+  "tag": "LIQUIDITÄT"
+ },
+ "next": {
+  "ep": "in den kommentaren",
+  "title": "Welches Thema<br>als Nächstes?"
+ }
+}
