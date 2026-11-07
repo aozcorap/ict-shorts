@@ -48,6 +48,7 @@ def main():
     ap.add_argument("--voice", nargs="*", default=[])
     ap.add_argument("--silent", nargs="*", default=[])
     ap.add_argument("--tmp", required=True)
+    ap.add_argument("--silent-music", choices=["rhythm", "drive", "lift"], default="rhythm", help="Musik der stummen Fassung (drive/lift = make_music2.py)")
     a = ap.parse_args()
     spec_dir, aud, parts, out, tmp = (Path(x) for x in (a.spec_dir, a.audio_dir, a.parts_dir, a.out_dir, a.tmp))
     spec_dir = spec_dir if spec_dir.is_absolute() else ROOT / spec_dir
@@ -65,11 +66,14 @@ def main():
         run("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", "-an", vcat)
         # 2) Musik in Gesamtlaenge
         music = tmp / f"{vid}_music.wav"
-        run(sys.executable, ROOT / "make_music.py", f"{total:.2f}", music, "rhythm")
+        if mode == "silent" and a.silent_music in ("drive", "lift"):
+            run(sys.executable, ROOT / "make_music2.py", f"{total:.2f}", music, a.silent_music)
+        else:
+            run(sys.executable, ROOT / "make_music.py", f"{total:.2f}", music, "rhythm")
         fade = f"afade=t=out:st={total - 1.5:.2f}:d=1.5"
         if mode == "silent":
             run("ffmpeg", "-v", "error", "-y", "-i", vcat, "-i", music, "-filter_complex",
-                f"[1:a]loudnorm=I=-24:TP=-2:LRA=7,{fade},atrim=0:{total:.2f}[m]", "-map", "0:v", "-map", "[m]",
+                f"[1:a]loudnorm=I={-22 if a.silent_music != "rhythm" else -24}:TP=-2:LRA=7,{fade},atrim=0:{total:.2f}[m]", "-map", "0:v", "-map", "[m]",
                 "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-t", f"{total:.2f}", out / f"{vid}.mp4")
             print(vid, "stumm fertig", f"{total:.1f}s")
             continue
